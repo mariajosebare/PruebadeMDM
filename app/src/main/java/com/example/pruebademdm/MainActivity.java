@@ -1,7 +1,6 @@
 package com.example.pruebademdm;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     public void botcrearusuario (View view) {
         Intent botcrearusuario = new Intent(this,creaciondeusuario.class);
         startActivity(botcrearusuario);
+<<<<<<< HEAD
      // Finaliza metodo boton crear usuario
     }
 
@@ -29,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
         Intent botingresar = new Intent(this,LoginDataSource.class);
         startActivity(botingresar);
         // Finaliza metodo boton crear usuario
+=======
+
+>>>>>>> 54681b2d0a80e4309f496f312f536cd24da13cc5
     }
 }
 
