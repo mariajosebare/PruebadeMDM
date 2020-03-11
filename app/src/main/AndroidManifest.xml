@@ -13,11 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Perfildeusuario"
-            android:label="@string/title_activity_perfildeusuario"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".creaciondeusuario" />
-        <activity
             android:name=".ui.login.LoginActivity"
             android:label="@string/title_activity_login"
             android:parentActivityName=".MainActivity">
@@ -25,6 +20,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.pruebademdm.MainActivity" />
         </activity>
+        <activity
+            android:name=".Perfildeusuario"
+            android:label="@string/title_activity_perfildeusuario"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".creaciondeusuario" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

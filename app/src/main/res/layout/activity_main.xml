@@ -38,7 +38,7 @@
         app:srcCompat="@drawable/medoymana" />
 
     <Button
-        android:id="@+id/botoningresar"
+        android:id="@+id/botingresar"
         android:layout_width="303dp"
         android:layout_height="77dp"
         android:layout_marginStart="66dp"
@@ -48,6 +48,7 @@
         android:layout_marginRight="42dp"
         android:layout_marginBottom="211dp"
         android:background="#EC576B"
+        android:onClick="botingresar"
         android:text="INGRESAR"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
