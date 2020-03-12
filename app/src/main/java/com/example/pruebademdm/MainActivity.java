@@ -15,23 +15,27 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Comienza el codigo para colocar icono en el action bar
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+        // Finaliza codigo icono action bar
     }
     // Comienza metodo boton crear usuario
     public void botcrearusuario (View view) {
         Intent botcrearusuario = new Intent(this,creaciondeusuario.class);
         startActivity(botcrearusuario);
-<<<<<<< HEAD
      // Finaliza metodo boton crear usuario
     }
 
     // Comienza metodo boton Inicio
-    public void botingresar (View view) {
-        Intent botingresar = new Intent(this,LoginDataSource.class);
-        startActivity(botingresar);
-        // Finaliza metodo boton crear usuario
-=======
+   // public void botingresar (View view) {
+       // Intent botingresar = new Intent(this,Perfildeusuario.class);
+       // startActivity(botingresar);
+        // Finaliza metodo boton inicio
 
->>>>>>> 54681b2d0a80e4309f496f312f536cd24da13cc5
-    }
+
+
 }
+
 
