@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -44,13 +44,18 @@
             android:id="@+id/textView2"
             android:layout_width="142dp"
             android:layout_height="53dp"
+            android:layout_marginStart="181dp"
+            android:layout_marginLeft="181dp"
             android:layout_marginTop="80dp"
             android:layout_marginEnd="88dp"
             android:layout_marginRight="88dp"
+            android:layout_marginBottom="449dp"
             android:contentDescription="string/username"
             android:text="username"
             android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider" />
 
         <Button
@@ -75,8 +80,13 @@
             android:id="@+id/textInputEditText"
             android:layout_width="311dp"
             android:layout_height="93dp"
-            android:layout_marginTop="16dp"
-            android:contentDescription="string/text_input"
+            android:layout_marginStart="29dp"
+            android:layout_marginLeft="29dp"
+            android:layout_marginTop="292dp"
+            android:layout_marginEnd="71dp"
+            android:layout_marginRight="71dp"
+            android:layout_marginBottom="346dp"
+            android:contentDescription="username"
             android:gravity="top|left"
             android:hint="Hola @username, ¿qué necesitas?"
             android:orientation="horizontal"
@@ -86,40 +96,25 @@
             android:textSize="24sp"
             android:typeface="sans"
             android:verticalScrollbarPosition="left"
-            app:layout_constraintTop_toBottomOf="@+id/imageView9"
-            tools:layout_editor_absoluteX="29dp" />
-
-        <ImageView
-            android:id="@+id/imageView7"
-            android:layout_width="137dp"
-            android:layout_height="101dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="28dp"
-            android:layout_marginEnd="258dp"
-            android:layout_marginRight="258dp"
-            android:layout_marginBottom="602dp"
-            android:contentDescription="string/app_logo"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/mdmlogo" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imageView8"
-            android:layout_width="212dp"
-            android:layout_height="82dp"
-            android:layout_marginStart="13dp"
-            android:layout_marginLeft="13dp"
+            android:layout_width="388dp"
+            android:layout_height="89dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="50dp"
-            android:layout_marginEnd="33dp"
-            android:layout_marginRight="33dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="13dp"
+            android:layout_marginRight="13dp"
+            android:layout_marginBottom="592dp"
             android:contentDescription="@string/app_name"
-            app:layout_constraintBottom_toTopOf="@+id/divider"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView7"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/nombre" />
 

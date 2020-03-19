@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".Login"
-            android:label="@string/title_activity_login"
+            android:label="activity_login"
             android:parentActivityName=".MainActivity"/>
 
         <activity
