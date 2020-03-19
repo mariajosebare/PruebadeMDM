@@ -30,6 +30,7 @@ import com.example.pruebademdm.ui.login.LoginViewModelFactory;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pruebademdm.ui.home.HomeViewModel;
+import android.view.View;
 
 public class Login extends AppCompatActivity {
 
@@ -37,10 +38,21 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        }
     }
 
 
+    // Comienza metodo boton login para ir a main log
+    public void login(View view) {
+        Intent login = new Intent(this, main_log.class);
+        startActivity(login);
+        // Finaliza metodo boton login
+    }
+
+
+
+
+
+}
 
 
 

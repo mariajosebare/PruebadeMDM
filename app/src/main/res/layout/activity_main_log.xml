@@ -47,8 +47,8 @@
             android:layout_marginTop="80dp"
             android:layout_marginEnd="88dp"
             android:layout_marginRight="88dp"
-            android:contentDescription="@string/username"
-            android:text="@username"
+            android:contentDescription="string/username"
+            android:text="username"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider" />
@@ -62,7 +62,7 @@
             android:layout_marginTop="196dp"
             android:layout_marginEnd="162dp"
             android:layout_marginRight="162dp"
-            android:contentDescription="@string/buscar"
+            android:contentDescription="string/buscar"
             android:text="Buscar"
             android:textColor="#FFC107"
             android:textSize="18sp"
@@ -76,9 +76,7 @@
             android:layout_width="311dp"
             android:layout_height="93dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="44dp"
-            android:layout_marginRight="44dp"
-            android:contentDescription="@string/text_input"
+            android:contentDescription="string/text_input"
             android:gravity="top|left"
             android:hint="Hola @username, ¿qué necesitas?"
             android:orientation="horizontal"
@@ -88,8 +86,8 @@
             android:textSize="24sp"
             android:typeface="sans"
             android:verticalScrollbarPosition="left"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView9"
+            tools:layout_editor_absoluteX="29dp" />
 
         <ImageView
             android:id="@+id/imageView7"
@@ -98,34 +96,49 @@
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="28dp"
-            android:contentDescription="@string/app_logo"
+            android:layout_marginEnd="258dp"
+            android:layout_marginRight="258dp"
+            android:layout_marginBottom="602dp"
+            android:contentDescription="string/app_logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/mdmlogo" />
 
         <ImageView
             android:id="@+id/imageView8"
-            android:layout_width="229dp"
-            android:layout_height="89dp"
+            android:layout_width="212dp"
+            android:layout_height="82dp"
             android:layout_marginStart="13dp"
             android:layout_marginLeft="13dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="33dp"
+            android:layout_marginRight="33dp"
             android:layout_marginBottom="16dp"
             android:contentDescription="@string/app_name"
             app:layout_constraintBottom_toTopOf="@+id/divider"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView7"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/nombre" />
 
         <ImageView
             android:id="@+id/imageView9"
-            android:layout_width="114dp"
-            android:layout_height="113dp"
+            android:layout_width="99dp"
+            android:layout_height="106dp"
             android:layout_marginStart="56dp"
             android:layout_marginLeft="56dp"
             android:layout_marginTop="20dp"
-            android:contentDescription="@string/user_photo"
+            android:layout_marginEnd="256dp"
+            android:layout_marginRight="256dp"
+            android:layout_marginBottom="455dp"
+            android:contentDescription="string/user_photo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider"
-            app:srcCompat="@drawable/user" />
+            app:srcCompat="@drawable/limpiando" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

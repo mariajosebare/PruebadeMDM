@@ -1,6 +1,7 @@
 package com.example.pruebademdm;
 
-import activity_main_resultadosmatch.xml;
+//import activity_main_resultadosmatch.xml;
 
-public class main_resultadosmatch implements xml {
-}
+//public class main_resultadosmatch implements xml {
+//}
+

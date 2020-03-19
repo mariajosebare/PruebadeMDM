@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.pruebademdm">
 
     <dist:module dist:instant="true" />
@@ -13,19 +14,31 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ui.login.LoginActivity"
+            android:name=".Login"
             android:label="@string/title_activity_login"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.pruebademdm.MainActivity" />
+            android:parentActivityName=".MainActivity"/>
+
+        <activity
+            android:name=".main_log"
+            android:label="@string/title_activity_login">
+
+
+
         </activity>
         <activity
             android:name=".Perfildeusuario"
-            android:label="string/title_activity_perfildelusuarioitle_activity_perfildeusuario"
+            android:label="perfildelusuarioitle"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity android:name=".creaciondeusuario" />
-        <activity android:name=".MainActivity">
+
+        <activity android:name=".main_categorias" />
+
+
+
+        <activity android:name=".MainActivity"
+            tools:ignore="DuplicateActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
