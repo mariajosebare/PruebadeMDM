@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffcf25"
@@ -17,15 +19,5 @@
         android:text="Categorías:"
         android:textSize="24sp" />
 
-    <Spinner
-        android:id="@+id/spinner"
-        style="@android:style/Widget.Material.Spinner.Underlined"
-        android:layout_width="fill_parent"
-        android:layout_height="74dp"
-        android:entries="Mecánica, Electricidad, Belleza, Cocina, Fotografía, Arte"
-        android:fadeScrollbars="false"
-        android:prompt="@string/spinner_title"
-        android:spinnerMode="dropdown"
-        android:verticalScrollbarPosition="left" />
-
 </LinearLayout>
+

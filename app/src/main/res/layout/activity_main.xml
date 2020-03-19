@@ -48,6 +48,7 @@
             android:layout_marginEnd="54dp"
             android:layout_marginRight="54dp"
             android:layout_marginBottom="215dp"
+            android:onClick="botingresar"
             android:text="INGRESAR"
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
