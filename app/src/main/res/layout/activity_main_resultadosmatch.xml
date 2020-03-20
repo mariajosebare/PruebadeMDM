@@ -41,7 +41,7 @@
             tools:layout_editor_absoluteX="6dp" />
 
         <ImageView
-            android:id="@+id/imageView7"
+            android:id="@+id/app_logo"
             android:layout_width="137dp"
             android:layout_height="101dp"
             android:layout_marginStart="16dp"
@@ -53,42 +53,51 @@
             app:srcCompat="@drawable/mdmlogo" />
 
         <ImageView
-            android:id="@+id/imageView8"
+            android:id="@+id/app_name"
             android:layout_width="229dp"
             android:layout_height="89dp"
             android:layout_marginStart="13dp"
             android:layout_marginLeft="13dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginTop="43dp"
             android:contentDescription="@string/app_name"
-            app:layout_constraintBottom_toTopOf="@+id/divider"
-            app:layout_constraintStart_toEndOf="@+id/imageView7"
+            app:layout_constraintStart_toEndOf="@+id/app_logo"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/nombre" />
 
         <ImageView
             android:id="@+id/imageView6"
             android:layout_width="297dp"
             android:layout_height="287dp"
-            tools:layout_editor_absoluteX="57dp"
-            tools:layout_editor_absoluteY="189dp"
+            android:layout_marginStart="57dp"
+            android:layout_marginLeft="57dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider"
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
             android:id="@+id/conectausuario"
             android:layout_width="138dp"
             android:layout_height="30dp"
+            android:layout_marginStart="103dp"
+            android:layout_marginLeft="103dp"
+            android:layout_marginTop="66dp"
             android:text="Conectar usuario"
-            tools:layout_editor_absoluteX="103dp"
-            tools:layout_editor_absoluteY="580dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Nombre_usuario" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingActionButton3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="50dp"
             android:clickable="true"
             app:backgroundTint="#FFCE3B"
-            app:srcCompat="@drawable/chat"
-            tools:layout_editor_absoluteX="253dp"
-            tools:layout_editor_absoluteY="564dp" />
+            app:layout_constraintStart_toEndOf="@+id/conectausuario"
+            app:layout_constraintTop_toBottomOf="@+id/Nombre_usuario"
+            app:srcCompat="@drawable/chat" />
 
         <TextView
             android:id="@+id/Nombre_usuario"

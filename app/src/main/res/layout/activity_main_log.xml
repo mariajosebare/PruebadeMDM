@@ -41,16 +41,16 @@
             tools:layout_editor_absoluteX="6dp" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/user_name"
             android:layout_width="142dp"
             android:layout_height="53dp"
-            android:layout_marginTop="80dp"
-            android:layout_marginEnd="88dp"
-            android:layout_marginRight="88dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="72dp"
             android:contentDescription="string/username"
             android:text="username"
             android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/user_photo"
             app:layout_constraintTop_toBottomOf="@+id/divider" />
 
         <Button
@@ -59,23 +59,22 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="161dp"
             android:layout_marginLeft="161dp"
-            android:layout_marginTop="196dp"
-            android:layout_marginEnd="162dp"
-            android:layout_marginRight="162dp"
+            android:layout_marginTop="80dp"
+            android:background="#FFFFFF"
             android:contentDescription="string/buscar"
             android:text="Buscar"
-            android:textColor="#FFC107"
+            android:textColor="#000000"
             android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputEditText" />
+            app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputEditText"
+            android:id="@+id/textInput_necesidad"
             android:layout_width="311dp"
             android:layout_height="93dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="56dp"
+            android:layout_marginLeft="56dp"
+            android:layout_marginTop="12dp"
             android:contentDescription="string/text_input"
             android:gravity="top|left"
             android:hint="Hola @username, ¿qué necesitas?"
@@ -86,59 +85,57 @@
             android:textSize="24sp"
             android:typeface="sans"
             android:verticalScrollbarPosition="left"
-            app:layout_constraintTop_toBottomOf="@+id/imageView9"
-            tools:layout_editor_absoluteX="29dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_photo" />
 
         <ImageView
-            android:id="@+id/imageView7"
+            android:id="@+id/app_logo"
             android:layout_width="137dp"
             android:layout_height="101dp"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="28dp"
-            android:layout_marginEnd="258dp"
-            android:layout_marginRight="258dp"
-            android:layout_marginBottom="602dp"
             android:contentDescription="string/app_logo"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/mdmlogo" />
 
         <ImageView
-            android:id="@+id/imageView8"
+            android:id="@+id/app_name"
             android:layout_width="212dp"
             android:layout_height="82dp"
             android:layout_marginStart="13dp"
             android:layout_marginLeft="13dp"
             android:layout_marginTop="50dp"
-            android:layout_marginEnd="33dp"
-            android:layout_marginRight="33dp"
-            android:layout_marginBottom="16dp"
             android:contentDescription="@string/app_name"
-            app:layout_constraintBottom_toTopOf="@+id/divider"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView7"
+            app:layout_constraintStart_toEndOf="@+id/app_logo"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/nombre" />
 
         <ImageView
-            android:id="@+id/imageView9"
+            android:id="@+id/user_photo"
             android:layout_width="99dp"
             android:layout_height="106dp"
             android:layout_marginStart="56dp"
             android:layout_marginLeft="56dp"
             android:layout_marginTop="20dp"
-            android:layout_marginEnd="256dp"
-            android:layout_marginRight="256dp"
-            android:layout_marginBottom="455dp"
             android:contentDescription="string/user_photo"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider"
             app:srcCompat="@drawable/limpiando" />
 
+        <ImageButton
+            android:id="@+id/imageButton2"
+            style="@android:style/Widget.Material.ImageButton"
+            android:layout_width="311dp"
+            android:layout_height="84dp"
+            android:layout_marginStart="56dp"
+            android:layout_marginLeft="56dp"
+            android:layout_marginTop="33dp"
+            android:contentDescription="@string/button_selecionar"
+            android:onClick="showPopup"
+            android:src="@android:drawable/btn_dropdown"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInput_necesidad" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

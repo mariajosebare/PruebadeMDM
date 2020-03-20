@@ -22,8 +22,10 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
-
-
-
-
+    <string name="user_name">María Perez</string>
+    <string name="necesidad"></string>
+    <string name="categorias">Categorías</string>
+    <string name="button">Buscar</string>
+    <string name="photo"></string>
+    <string name="app_logo"></string>
     </resources>
