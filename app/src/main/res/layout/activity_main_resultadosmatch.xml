@@ -26,7 +26,7 @@
             android:layout_marginRight="411dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintGuide_begin="644dp"
+            app:layout_constraintGuide_begin="711dp"
             app:layout_constraintStart_toStartOf="parent" />
 
         <View
@@ -56,9 +56,9 @@
             android:id="@+id/imageView8"
             android:layout_width="229dp"
             android:layout_height="89dp"
-            android:layout_marginStart="13dp"
-            android:layout_marginLeft="13dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginBottom="76dp"
             android:contentDescription="@string/app_name"
             app:layout_constraintBottom_toTopOf="@+id/divider"
             app:layout_constraintStart_toEndOf="@+id/imageView7"
@@ -76,9 +76,9 @@
             android:id="@+id/conectausuario"
             android:layout_width="138dp"
             android:layout_height="30dp"
-            android:text="Conectar usuario"
+            android:text="Conectarusuario"
             tools:layout_editor_absoluteX="103dp"
-            tools:layout_editor_absoluteY="580dp" />
+            tools:layout_editor_absoluteY="598dp" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingActionButton3"
@@ -87,8 +87,8 @@
             android:clickable="true"
             app:backgroundTint="#FFCE3B"
             app:srcCompat="@drawable/chat"
-            tools:layout_editor_absoluteX="253dp"
-            tools:layout_editor_absoluteY="564dp" />
+            tools:layout_editor_absoluteX="248dp"
+            tools:layout_editor_absoluteY="585dp" />
 
         <TextView
             android:id="@+id/Nombre_usuario"
@@ -97,5 +97,29 @@
             android:text="Pablo"
             tools:layout_editor_absoluteX="190dp"
             tools:layout_editor_absoluteY="486dp" />
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/btn_star_big_on"
+            tools:layout_editor_absoluteX="209dp"
+            tools:layout_editor_absoluteY="514dp" />
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/btn_star_big_on"
+            tools:layout_editor_absoluteX="177dp"
+            tools:layout_editor_absoluteY="514dp" />
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/btn_star_big_on"
+            tools:layout_editor_absoluteX="248dp"
+            tools:layout_editor_absoluteY="514dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
