@@ -32,9 +32,6 @@
 
         <activity android:name=".creaciondeusuario" />
 
-        <activity android:name=".main_categorias" />
-
-
 
         <activity android:name=".MainActivity"
             tools:ignore="DuplicateActivity">
