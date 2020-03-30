@@ -76,86 +76,134 @@
                 android:id="@+id/checkBox1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CheckBox" />
+                android:text="Acupunturista" />
 
             <CheckBox
                 android:id="@+id/checkBox2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CheckBox" />
+                android:text="Afilador" />
 
             <CheckBox
                 android:id="@+id/checkBox3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CheckBox" />
+                android:text="Albañil" />
 
             <CheckBox
                 android:id="@+id/checkBox4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CheckBox" />
+                android:text="Animación de fiestas infantiles" />
 
             <CheckBox
                 android:id="@+id/checkBox5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CheckBox" />
+                android:text="Armado de redes" />
 
             <CheckBox
                 android:id="@+id/checkBox6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CheckBox" />
+                android:text="Artesano" />
 
             <CheckBox
                 android:id="@+id/checkBox7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CheckBox" />
+                android:text="Barbero" />
 
             <CheckBox
                 android:id="@+id/checkBox8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CheckBox" />
+                android:text="Barrendero" />
 
             <CheckBox
                 android:id="@+id/checkBox9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CheckBox" />
+                android:text="Botánico" />
 
             <CheckBox
                 android:id="@+id/checkBox10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CheckBox" />
+                android:text="Carpintero" />
 
             <CheckBox
                 android:id="@+id/checkBox11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CheckBox" />
+                android:text="Cerrajero" />
 
             <CheckBox
                 android:id="@+id/checkBox12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CheckBox" />
+                android:text="Chofer o conductor" />
 
             <CheckBox
                 android:id="@+id/checkBox13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CheckBox" />
+                android:text="Cocinero" />
 
 
+            <CheckBox
+                android:id="@+id/checkBox14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Corte de pelo y baño de mascotas" />
             <CheckBox
                 android:id="@+id/checkBox15"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CheckBox" />
+                android:text="Corte de pelo y baño de mascotas" />
+
+            <CheckBox
+            android:id="@+id/checkBox16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Corte de pelo y baño de mascotas" />
+
+            <CheckBox
+                android:id="@+id/checkBox17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Corte de pelo y baño de mascotas" />
+
+            <CheckBox
+                android:id="@+id/checkBox18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Corte de pelo y baño de mascotas" />
+
+            <CheckBox
+                android:id="@+id/checkBox19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Corte de pelo y baño de mascotas" />
+
+            <CheckBox
+                android:id="@+id/checkBox20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Corte de pelo y baño de mascotas" />
+
+            <CheckBox
+                android:id="@+id/checkBox21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Corte de pelo y baño de mascotas" />
+
+            <CheckBox
+                android:id="@+id/checkBox22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Corte de pelo y baño de mascotas" />
+
             android:layout_height="wrap_content"
             android:text="CheckBox" />
         </LinearLayout>
