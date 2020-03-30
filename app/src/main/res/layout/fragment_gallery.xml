@@ -4,32 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFEB3B"
-    android:scrollbarSize="8dp">
+    tools:context=".ui.gallery.GalleryFragment">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="386dp"
+        android:layout_height="243dp"
+        android:src="@drawable/anacasalas"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
 
     <TextView
-        android:id="@+id/text_gallery"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <RatingBar
-        android:id="@+id/ratingBar"
+        android:id="@+id/textView3"
         android:layout_width="342dp"
-        android:layout_height="56dp"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="136dp" />
+        android:layout_height="27dp"
+        android:text="Mi galeria de me doy maña"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="273dp" />
 
-    <requestFocus
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="200dp"
-        tools:layout_editor_absoluteY="366dp" />
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="140dp"
+        android:layout_height="94dp"
+        android:src="@drawable/fotobotes"
+        tools:layout_editor_absoluteX="22dp"
+        tools:layout_editor_absoluteY="310dp" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="198dp"
+        android:layout_height="94dp"
+        android:src="@drawable/impaisajeagua"
+        tools:layout_editor_absoluteX="176dp"
+        tools:layout_editor_absoluteY="310dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

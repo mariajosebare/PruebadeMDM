@@ -9,7 +9,7 @@
     tools:openDrawer="start">
 
     <include
-        layout="@layout/app_bar_perfildeusuario"
+        layout="@layout/app_bar_perfil_usuario"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
@@ -18,9 +18,8 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="#CDDC39"
         android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header_perfildeusuario"
-        app:menu="@menu/activity_perfildeusuario_drawer" />
+        app:headerLayout="@layout/nav_header_perfil_usuario"
+        app:menu="@menu/activity_perfil_usuario_drawer" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

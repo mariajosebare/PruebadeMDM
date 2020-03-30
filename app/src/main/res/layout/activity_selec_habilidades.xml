@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".selec_habilidades">
+
+    <ImageView
+        android:id="@+id/imageView20"
+        android:layout_width="253dp"
+        android:layout_height="124dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginRight="13dp"
+        android:layout_marginBottom="375dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/anacasalas" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="244dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="167dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="323dp"
+        android:text="Seleccion de habilidades"
+        android:textColor="#7B1A8C"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/mis_habilidades"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="111dp"
+        android:layout_marginLeft="111dp"
+        android:layout_marginTop="447dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="31dp"
+        android:onClick="mis_habilidades"
+        android:text="Mis habilidades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="280dp"
+        android:layout_height="229dp"
+        android:layout_marginTop="210dp"
+        android:layout_marginBottom="87dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/checkBox1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CheckBox" />
+
+            <CheckBox
+                android:id="@+id/checkBox2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CheckBox" />
+
+            <CheckBox
+                android:id="@+id/checkBox3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CheckBox" />
+
+            <CheckBox
+                android:id="@+id/checkBox4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CheckBox" />
+
+            <CheckBox
+                android:id="@+id/checkBox5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CheckBox" />
+
+            <CheckBox
+                android:id="@+id/checkBox6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CheckBox" />
+
+            <CheckBox
+                android:id="@+id/checkBox7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CheckBox" />
+
+            <CheckBox
+                android:id="@+id/checkBox8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CheckBox" />
+
+            <CheckBox
+                android:id="@+id/checkBox9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CheckBox" />
+
+            <CheckBox
+                android:id="@+id/checkBox10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CheckBox" />
+
+            <CheckBox
+                android:id="@+id/checkBox11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CheckBox" />
+
+            <CheckBox
+                android:id="@+id/checkBox12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CheckBox" />
+
+            <CheckBox
+                android:id="@+id/checkBox13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CheckBox" />
+
+
+            <CheckBox
+                android:id="@+id/checkBox15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CheckBox" />
+            android:layout_height="wrap_content"
+            android:text="CheckBox" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
