@@ -124,7 +124,7 @@
         android:layout_marginRight="51dp"
         android:ems="10"
         android:hint="Contraseña"
-        android:inputType="textMultiLine"
+        android:inputType="textPassword"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
