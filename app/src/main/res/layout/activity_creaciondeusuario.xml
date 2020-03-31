@@ -8,6 +8,7 @@
     tools:context=".creaciondeusuario">
 
     <TextView
+        android:id="@+id/textView11"
         android:layout_width="275dp"
         android:layout_height="63dp"
         android:layout_marginStart="68dp"
@@ -29,19 +30,17 @@
         android:layout_height="42dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="21dp"
         android:layout_marginEnd="49dp"
         android:layout_marginRight="49dp"
-        android:layout_marginBottom="569dp"
         android:ems="10"
         android:gravity="start|top"
         android:hint="Nombre"
         android:inputType="textMultiLine"
         android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <EditText
         android:id="@+id/Apellido"
@@ -49,18 +48,16 @@
         android:layout_height="38dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="179dp"
+        android:layout_marginTop="17dp"
         android:layout_marginEnd="48dp"
         android:layout_marginRight="48dp"
-        android:layout_marginBottom="514dp"
         android:ems="10"
         android:gravity="start|top"
         android:hint="Apellido"
         android:inputType="textMultiLine"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/Nombre" />
 
     <EditText
         android:id="@+id/Telefono"
@@ -68,17 +65,15 @@
         android:layout_height="67dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="228dp"
-        android:layout_marginEnd="253dp"
-        android:layout_marginRight="253dp"
-        android:layout_marginBottom="436dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
         android:ems="10"
         android:hint="Telefno"
         android:inputType="phone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Documento"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/Apellido" />
 
 
     <EditText
@@ -107,18 +102,16 @@
         android:layout_height="43dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="318dp"
+        android:layout_marginTop="23dp"
         android:layout_marginEnd="48dp"
         android:layout_marginRight="48dp"
-        android:layout_marginBottom="370dp"
         android:ems="10"
         android:hint="Correo"
         android:inputType="textMultiLine"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/Telefono" />
 
     <EditText
         android:id="@+id/contraseña"
@@ -126,18 +119,16 @@
         android:layout_height="44dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="384dp"
+        android:layout_marginTop="23dp"
         android:layout_marginEnd="51dp"
         android:layout_marginRight="51dp"
-        android:layout_marginBottom="303dp"
         android:ems="10"
         android:hint="Contraseña"
         android:inputType="textMultiLine"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/correo" />
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -145,14 +136,14 @@
         android:layout_height="54dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="457dp"
-        android:layout_marginEnd="303dp"
-        android:layout_marginRight="303dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="9dp"
         android:layout_marginBottom="220dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contraseña"
         app:srcCompat="@drawable/ic_menu_camera"
         tools:ignore="MissingConstraints" />
 
@@ -160,32 +151,28 @@
         android:id="@+id/validarusuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="261dp"
-        android:layout_marginLeft="261dp"
-        android:layout_marginTop="614dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginLeft="14dp"
         android:layout_marginEnd="62dp"
         android:layout_marginRight="62dp"
-        android:layout_marginBottom="69dp"
+        android:layout_marginBottom="36dp"
         android:onClick="validarusuario"
         android:text="Crear"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView5" />
 
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="130dp"
         android:layout_height="223dp"
-        android:layout_marginStart="117dp"
-        android:layout_marginLeft="117dp"
-        android:layout_marginTop="439dp"
+        android:layout_marginTop="11dp"
         android:layout_marginEnd="164dp"
         android:layout_marginRight="164dp"
         android:layout_marginBottom="69dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contraseña"
         app:srcCompat="@drawable/chef" />
 </androidx.constraintlayout.widget.ConstraintLayout>
