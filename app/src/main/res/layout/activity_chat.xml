@@ -10,113 +10,157 @@
         android:id="@+id/textView21"
         android:layout_width="280dp"
         android:layout_height="62dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="19dp"
         android:text="Correcto el 5 a las 14 horas estare ahí."
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="512dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
     <ImageView
         android:id="@+id/imageView23"
         android:layout_width="73dp"
         android:layout_height="80dp"
-        app:srcCompat="@drawable/anacasalas"
-        tools:layout_editor_absoluteX="322dp"
-        tools:layout_editor_absoluteY="502dp" />
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="9dp"
+        app:layout_constraintStart_toEndOf="@+id/textView21"
+        app:layout_constraintTop_toBottomOf="@+id/textView20"
+        app:srcCompat="@drawable/anacasalas" />
 
     <TextView
         android:id="@+id/textView20"
         android:layout_width="283dp"
         android:layout_height="50dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginRight="39dp"
         android:text="Excelene el 5 a las 14 horas en .......Le queda bien "
-        tools:layout_editor_absoluteX="89dp"
-        tools:layout_editor_absoluteY="443dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView21" />
 
     <ImageView
         android:id="@+id/imageView22"
         android:layout_width="56dp"
         android:layout_height="58dp"
-        app:srcCompat="@drawable/fotochica"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="435dp" />
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginRight="7dp"
+        app:layout_constraintEnd_toStartOf="@+id/textView20"
+        app:layout_constraintTop_toBottomOf="@+id/textView19"
+        app:srcCompat="@drawable/fotochica" />
 
     <TextView
         android:id="@+id/textView18"
         android:layout_width="283dp"
         android:layout_height="50dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginRight="39dp"
         android:text="Si claro!! El cumpleaño es el dia 5 en la noche"
-        tools:layout_editor_absoluteX="89dp"
-        tools:layout_editor_absoluteY="283dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView18" />
 
     <ImageView
         android:id="@+id/imageView19"
         android:layout_width="56dp"
         android:layout_height="58dp"
-        app:srcCompat="@drawable/fotochica"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="275dp" />
+        android:layout_marginStart="26dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView17"
+        app:srcCompat="@drawable/fotochica" />
 
     <TextView
         android:id="@+id/textView15"
         android:layout_width="315dp"
         android:layout_height="68dp"
+        android:layout_marginTop="41dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
         android:text="Chat de usuarios"
         android:textColor="#671675"
         android:textSize="42sp"
-        tools:layout_editor_absoluteX="48dp"
-        tools:layout_editor_absoluteY="41dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView16"
         android:layout_width="56dp"
         android:layout_height="58dp"
-        app:srcCompat="@drawable/fotochica"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="127dp" />
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginRight="7dp"
+        app:layout_constraintEnd_toStartOf="@+id/textView16"
+        app:layout_constraintTop_toBottomOf="@+id/textView15"
+        app:srcCompat="@drawable/fotochica" />
 
     <TextView
         android:id="@+id/textView16"
         android:layout_width="283dp"
         android:layout_height="50dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginRight="39dp"
         android:text="Buenas noches!! Puedes realizar un book de fotos del cumpleaño"
-        tools:layout_editor_absoluteX="89dp"
-        tools:layout_editor_absoluteY="127dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <ImageView
         android:id="@+id/imageView18"
         android:layout_width="73dp"
         android:layout_height="80dp"
-        app:srcCompat="@drawable/anacasalas"
-        tools:layout_editor_absoluteX="322dp"
-        tools:layout_editor_absoluteY="185dp" />
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/textView17"
+        app:layout_constraintTop_toBottomOf="@+id/textView16"
+        app:srcCompat="@drawable/anacasalas" />
 
     <ImageView
         android:id="@+id/imageView21"
         android:layout_width="73dp"
         android:layout_height="80dp"
-        app:srcCompat="@drawable/anacasalas"
-        tools:layout_editor_absoluteX="322dp"
-        tools:layout_editor_absoluteY="340dp" />
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="7dp"
+        app:layout_constraintStart_toEndOf="@+id/textView19"
+        app:layout_constraintTop_toBottomOf="@+id/textView18"
+        app:srcCompat="@drawable/anacasalas" />
 
     <TextView
         android:id="@+id/textView17"
         android:layout_width="280dp"
         android:layout_height="62dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="18dp"
         android:text="Buanas noches!! Si puedo realizarlo,a cambio puede reparar mi pc ?"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="203dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView16" />
 
     <TextView
         android:id="@+id/textView19"
         android:layout_width="280dp"
         android:layout_height="62dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="25dp"
         android:text="Perfecto !! Le parece que pase en la tarde para ver el mejor lugar para las fotos y llevar la pc ?"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="358dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="186dp"
         android:layout_height="73dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginRight="31dp"
+        android:layout_marginBottom="125dp"
         android:text="Confirmar intercambio"
-        tools:layout_editor_absoluteX="194dp"
-        tools:layout_editor_absoluteY="625dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView23" />
 </androidx.constraintlayout.widget.ConstraintLayout>
