@@ -35,6 +35,7 @@
 >>>>>>> 8d5695102ee5aa7c840e50d067b56d73606e5f04
 =======
 >>>>>>> 8d5695102ee5aa7c840e50d067b56d73606e5f04
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
@@ -43,7 +44,7 @@
         android:layout_marginRight="411dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintGuide_begin="644dp"
+        app:layout_constraintGuide_end="179dp"
         app:layout_constraintStart_toStartOf="parent" />
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -165,24 +166,16 @@
             tools:layout_editor_absoluteY="598dp" />
 >>>>>>> 644435eef7221b98e08636c3ade15c99cd5cc434
 
+
+
         ]]>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="33dp"
-            android:layout_marginLeft="33dp"
-            android:layout_marginTop="104dp"
-            android:clickable="true"
-            app:backgroundTint="#FFCE3B"
-            app:layout_constraintStart_toEndOf="@+id/conectausuario"
-            app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+    <<<<<<
 
-        <<<<<<< HEAD
-            app:layout_constraintStart_toEndOf="@+id/conectausuario"
-            app:layout_constraintTop_toBottomOf="@+id/Nombre_usuario"
-            app:srcCompat="@drawable/chat" /><![CDATA[
+    < HEAD
+        app:layout_constraintTop_toBottomOf="@+id/Nombre_usuario"
+        app:srcCompat="@drawable/chat"
+        tools:layout_editor_absoluteX="241dp" /><![CDATA[
 =======
             app:srcCompat="@drawable/chat"
             tools:layout_editor_absoluteX="248dp"
