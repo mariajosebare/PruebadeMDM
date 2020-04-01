@@ -21,6 +21,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".chat"></activity>
         <activity android:name=".selec_habilidades" />
+        <activity android:name=".main_resultadosmatch"/>
+
         <activity
             android:name=".perfil_usuario"
             android:label="@string/title_activity_perfil_usuario"

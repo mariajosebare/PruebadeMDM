@@ -1,7 +1,9 @@
 package com.example.pruebademdm;
 
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -27,4 +29,12 @@ import androidx.appcompat.app.AppCompatActivity;
             getSupportActionBar().setIcon(R.mipmap.ic_launcher);
             // Finaliza codigo icono action bar
         }
+
+        // Comienza metodo boton buscar necesidad
+        public void busquedanece (View view) {
+            Intent busquedanece = new Intent(this, main_resultadosmatch.class);
+            startActivity(busquedanece);
+            // Finaliza metodo boton buscar necesidad
+        }
     }
+

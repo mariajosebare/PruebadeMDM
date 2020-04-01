@@ -1,10 +1,10 @@
 package com.example.pruebademdm;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class selec_habilidades extends AppCompatActivity {
 
@@ -19,4 +19,6 @@ public class selec_habilidades extends AppCompatActivity {
         startActivity(mis_habilidades);
         // Finaliza metodo boton crear usuario para ir a perfil de usuario
     }
+
 }
+
