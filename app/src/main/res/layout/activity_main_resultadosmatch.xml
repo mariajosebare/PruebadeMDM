@@ -15,6 +15,28 @@
         app:layout_constraintGuide_begin="147dp"
         app:layout_constraintStart_toStartOf="parent" />
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="411dp"
+            android:layout_marginRight="411dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_begin="711dp"
+            app:layout_constraintStart_toStartOf="parent" />
+=======
+=======
+>>>>>>> 8d5695102ee5aa7c840e50d067b56d73606e5f04
+=======
+>>>>>>> 8d5695102ee5aa7c840e50d067b56d73606e5f04
+=======
+>>>>>>> 8d5695102ee5aa7c840e50d067b56d73606e5f04
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
@@ -23,8 +45,18 @@
         android:layout_marginRight="411dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintGuide_begin="644dp"
+        app:layout_constraintGuide_end="179dp"
         app:layout_constraintStart_toStartOf="parent" />
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 8d5695102ee5aa7c840e50d067b56d73606e5f04
+=======
+>>>>>>> 8d5695102ee5aa7c840e50d067b56d73606e5f04
+=======
+>>>>>>> 8d5695102ee5aa7c840e50d067b56d73606e5f04
+=======
+>>>>>>> 8d5695102ee5aa7c840e50d067b56d73606e5f04
 
     <View
         android:id="@+id/divider"
@@ -49,6 +81,31 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/mdmlogo" />
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+    <<<<<<< HEAD
+            android:layout_marginStart="13dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="43dp"
+=======
+            android:layout_marginStart="28dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginBottom="76dp"
+>>>>>>> 644435eef7221b98e08636c3ade15c99cd5cc434
+            android:contentDescription="@string/app_name"
+            app:layout_constraintStart_toEndOf="@+id/app_logo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/nombre" />
+=======
+=======
+>>>>>>> 8d5695102ee5aa7c840e50d067b56d73606e5f04
+=======
+>>>>>>> 8d5695102ee5aa7c840e50d067b56d73606e5f04
+=======
+>>>>>>> 8d5695102ee5aa7c840e50d067b56d73606e5f04
     <ImageView
         android:id="@+id/app_name"
         android:layout_width="229dp"
@@ -60,6 +117,16 @@
         app:layout_constraintStart_toEndOf="@+id/app_logo"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/nombre" />
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 8d5695102ee5aa7c840e50d067b56d73606e5f04
+=======
+>>>>>>> 8d5695102ee5aa7c840e50d067b56d73606e5f04
+=======
+>>>>>>> 8d5695102ee5aa7c840e50d067b56d73606e5f04
+=======
+>>>>>>> 8d5695102ee5aa7c840e50d067b56d73606e5f04
 
     <ImageView
         android:id="@+id/imageView6"
@@ -72,6 +139,87 @@
         app:layout_constraintTop_toBottomOf="@+id/divider"
         tools:srcCompat="@drawable/cecivarela" />
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <TextView
+            android:id="@+id/conectausuario"
+            android:layout_width="138dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="127dp"
+            android:layout_marginLeft="127dp"
+            android:layout_marginTop="49dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+
+        <<<<<<
+
+    < HEAD
+        android:layout_marginStart="103dp"
+        android:layout_marginLeft="103dp"
+        android:text="Conectar usuario"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="649dp" /><![CDATA[
+=======
+            android:text="Conectarusuario"
+            tools:layout_editor_absoluteX="103dp"
+            tools:layout_editor_absoluteY="598dp" />
+>>>>>>> 644435eef7221b98e08636c3ade15c99cd5cc434
+
+
+
+        ]]>
+
+    <<<<<<
+
+    < HEAD
+        app:layout_constraintTop_toBottomOf="@+id/Nombre_usuario"
+        app:srcCompat="@drawable/chat"
+        tools:layout_editor_absoluteX="241dp" /><![CDATA[
+=======
+            app:srcCompat="@drawable/chat"
+            tools:layout_editor_absoluteX="248dp"
+            tools:layout_editor_absoluteY="585dp" />
+>>>>>>> 644435eef7221b98e08636c3ade15c99cd5cc434
+
+        ]]>
+
+    <TextView
+        android:id="@+id/Nombre_usuario"
+        android:layout_width="75dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="20dp"
+        android:text="Pablo"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        tools:layout_editor_absoluteX="190dp" />
+
+    <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/imageView11"
+            app:layout_constraintTop_toBottomOf="@+id/Nombre_usuario"
+            app:srcCompat="@android:drawable/btn_star_big_on" />
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="177dp"
+            android:layout_marginLeft="177dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Nombre_usuario"
+            app:srcCompat="@android:drawable/btn_star_big_on" />
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/Nombre_usuario"
+            app:srcCompat="@android:drawable/btn_star_big_on"
+            tools:layout_editor_absoluteX="248dp" />
+=======
     <TextView
         android:id="@+id/conectausuario"
         android:layout_width="138dp"
@@ -102,13 +250,92 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/chat" />
 
+=======
+    <TextView
+        android:id="@+id/conectausuario"
+        android:layout_width="138dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="103dp"
+        android:layout_marginLeft="103dp"
+        android:layout_marginTop="66dp"
+        android:text="Conectar usuario"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Nombre_usuario" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="50dp"
+        android:clickable="true"
+        app:backgroundTint="#FFCE3B"
+        app:layout_constraintStart_toEndOf="@+id/conectausuario"
+        app:layout_constraintTop_toBottomOf="@+id/Nombre_usuario"
+        app:srcCompat="@drawable/chat" />
+
+>>>>>>> 8d5695102ee5aa7c840e50d067b56d73606e5f04
+=======
+    <TextView
+        android:id="@+id/conectausuario"
+        android:layout_width="138dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="103dp"
+        android:layout_marginLeft="103dp"
+        android:layout_marginTop="66dp"
+        android:text="Conectar usuario"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Nombre_usuario" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="50dp"
+        android:clickable="true"
+        app:backgroundTint="#FFCE3B"
+        app:layout_constraintStart_toEndOf="@+id/conectausuario"
+        app:layout_constraintTop_toBottomOf="@+id/Nombre_usuario"
+        app:srcCompat="@drawable/chat" />
+
+>>>>>>> 8d5695102ee5aa7c840e50d067b56d73606e5f04
+=======
+    <TextView
+        android:id="@+id/conectausuario"
+        android:layout_width="138dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="103dp"
+        android:layout_marginLeft="103dp"
+        android:layout_marginTop="66dp"
+        android:text="Conectar usuario"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Nombre_usuario" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="50dp"
+        android:clickable="true"
+        app:backgroundTint="#FFCE3B"
+        app:layout_constraintStart_toEndOf="@+id/conectausuario"
+        app:layout_constraintTop_toBottomOf="@+id/Nombre_usuario"
+        app:srcCompat="@drawable/chat" />
+
+>>>>>>> 8d5695102ee5aa7c840e50d067b56d73606e5f04
+
     <TextView
         android:id="@+id/Nombre_usuario"
         android:layout_width="75dp"
         android:layout_height="28dp"
         android:layout_marginStart="190dp"
         android:layout_marginLeft="190dp"
-        android:layout_marginTop="486dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="146dp"
         android:layout_marginRight="146dp"
         android:layout_marginBottom="217dp"
@@ -116,6 +343,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 8d5695102ee5aa7c840e50d067b56d73606e5f04
+=======
+>>>>>>> 8d5695102ee5aa7c840e50d067b56d73606e5f04
+=======
+>>>>>>> 8d5695102ee5aa7c840e50d067b56d73606e5f04
+=======
+>>>>>>> 8d5695102ee5aa7c840e50d067b56d73606e5f04
 
 </androidx.constraintlayout.widget.ConstraintLayout>
