@@ -33,4 +33,11 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.loopj.android:android-async-http:1.4.9'
+    implementation 'com.github.GrenderG:Toasty:1.4.2'
+}
+allprojects {
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
 }

@@ -3,34 +3,20 @@ package com.example.pruebademdm;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.app.Activity;
-
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
-
-import androidx.annotation.Nullable;
-import androidx.annotation.StringRes;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.view.KeyEvent;
-import android.view.View;
-import android.view.inputmethod.EditorInfo;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.pruebademdm.R;
-import com.example.pruebademdm.ui.login.LoginViewModel;
-import com.example.pruebademdm.ui.login.LoginViewModelFactory;
-
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.pruebademdm.ui.home.HomeViewModel;
-import android.view.View;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import c.e.p.util.HttpUtils;
+import cz.msebera.android.httpclient.Header;
+import es.dmoral.toasty.Toasty;
 
 public class Login extends AppCompatActivity {
 
@@ -40,12 +26,42 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
     }
 
-
-    // Comienza metodo boton login para ir a main log
     public void login(View view) {
-        Intent login = new Intent(this, main_log.class);
-        startActivity(login);
-        // Finaliza metodo boton login
+        final Intent login = new Intent(this, main_log.class);
+        String username = ((EditText) findViewById(R.id.user_name)).getText().toString();
+        String password = ((EditText) findViewById(R.id.password)).getText().toString();
+        RequestParams request = new RequestParams();
+        request.add("email", username);
+        request.add("password", password);
+        HttpUtils.post("/login", request, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                try {
+                    JSONObject response=new JSONObject(new String(responseBody));
+                    if (!response.has("error")) {
+                        startActivity(login);
+                    } else {
+                        Toasty.error(getApplicationContext(),
+                                "Usuario o contraseña inválidos",
+                                Toast.LENGTH_SHORT,
+                                true
+                        ).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toasty.error(getApplicationContext(),
+                            e.getMessage(),
+                            Toast.LENGTH_SHORT,
+                            true
+                    ).show();
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                error.printStackTrace();
+            }
+        });
     }
 
 
