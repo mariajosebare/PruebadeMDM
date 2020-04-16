@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import c.e.p.util.HttpUtils;
@@ -31,7 +32,11 @@ import cz.msebera.android.httpclient.Header;
             HttpUtils.get("/necesidades", null, new AsyncHttpResponseHandler() {
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                    JSONObject response_habilidades=new JSONObject(new String(responseBody));
+                    try {
+                        JSONObject response_habilidades=new JSONObject(new String(responseBody));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
 
                 }
 
@@ -39,9 +44,8 @@ import cz.msebera.android.httpclient.Header;
                 public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
 
                 }
-            }
+            });
 
-        }
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main_log);
             //COnexión con XML
@@ -66,19 +70,6 @@ import cz.msebera.android.httpclient.Header;
             // Finaliza metodo boton buscar necesidad
         }
 
-        public void main_log(View view) {
-            final Intent main_log = new Intent(this, main_log.class);
-            HttpUtils.get("/necesidades", null, new AsyncHttpResponseHandler() {
-                @Override
-                public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                    JSONObject response_habilidades=new JSONObject(new String(responseBody));
-                }
 
-                @Override
-                public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-
-                }
-            }
-        }
     }
 
