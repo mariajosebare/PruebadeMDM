@@ -8,18 +8,13 @@
     android:focusableInTouchMode="true"
     tools:context=".chat">
 
-    <ScrollView
+    <ListView
         android:id="@+id/listaMensajes"
         android:layout_width="match_parent"
-        android:layout_height="685dp"
-        android:background="#FFFFFF">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#FFCE0A"
-            android:orientation="vertical" />
-    </ScrollView>
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:divider="#fff"
+        android:isScrollContainer="true" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,7 +24,7 @@
 
             <EditText
                 android:id="@+id/textMensaje"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:ems="10"

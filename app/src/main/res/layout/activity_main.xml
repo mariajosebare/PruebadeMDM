@@ -8,24 +8,9 @@
     android:background="#FFCE0A"
     tools:context=".MainActivity">
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="307dp"
-            android:layout_height="56dp"
-            android:text="ME DOY MAÑA"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="#000000"
-            android:textSize="44sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.1" />
-
         <Button
             android:id="@+id/botingresar"
-            android:layout_width="305dp"
+            android:layout_width="250dp"
             android:layout_height="69dp"
             android:layout_marginStart="58dp"
             android:layout_marginLeft="58dp"
@@ -38,14 +23,18 @@
             android:text="INGRESAR"
             android:textColor="#000000"
             android:textSize="28sp"
+            android:textStyle="bold"
+            android:typeface="sans"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.454"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
         <Button
             android:id="@+id/botcrearusuario"
-            android:layout_width="305dp"
+            android:layout_width="250dp"
             android:layout_height="69dp"
             android:layout_marginStart="58dp"
             android:layout_marginLeft="58dp"
@@ -58,21 +47,25 @@
             android:text="CREAR USUARIO"
             android:textColor="#000000"
             android:textSize="28sp"
+            android:textStyle="bold"
+            android:typeface="sans"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.454"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
         <ImageView
             android:id="@+id/imageView5"
-            android:layout_width="301dp"
-            android:layout_height="226dp"
+            android:layout_width="411dp"
+            android:layout_height="305dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.378"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.318"
+            app:layout_constraintVertical_bias="0.244"
             app:srcCompat="@drawable/logo_amarillo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
