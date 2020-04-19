@@ -4,19 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import c.e.p.util.HttpUtils;
 import cz.msebera.android.httpclient.Header;
-import es.dmoral.toasty.Toasty;
 
 public class creaciondeusuario extends AppCompatActivity {
 
@@ -42,35 +37,22 @@ public class creaciondeusuario extends AppCompatActivity {
         String email = ((EditText) findViewById(R.id.email)).getText().toString();
         String password = ((EditText) findViewById(R.id.password)).getText().toString();
         RequestParams request = new RequestParams();
-        request.add("Nombre", Nombre);
-        request.add("Apellido", Apellido);
-        request.add("Telefono", Telefono);
+        request.add("nombre", Nombre);
+        request.add("apellido", Apellido);
+        request.add("telefono", Telefono);
         request.add("ci", Documento);
-        request.add("fecha_nacimiento", fecha_nacimiento);
+        request.add("fecha de nacimiento", fecha_nacimiento);
         request.add("email", email);
         request.add("password", password);
+        request.add("calle","");
+        request.add("numero de puerta","0");
+        request.add("esquina 1","");
+        request.add("esquina 2","");
+
         HttpUtils.put("/usuarios", request, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                try {
-                    JSONObject response = new JSONObject(new String(responseBody));
-                    if (!response.has("error")) {
-                        startActivity(validarusuario);
-                    } else {
-                        Toasty.error(getApplicationContext(),
-                                "Falta completar campos",
-                                Toast.LENGTH_SHORT,
-                                true
-                        ).show();
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Toasty.error(getApplicationContext(),
-                            e.getMessage(),
-                            Toast.LENGTH_SHORT,
-                            true
-                    ).show();
-                }
+                startActivity(validarusuario);
             }
 
             @Override
