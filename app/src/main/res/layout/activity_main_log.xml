@@ -9,8 +9,35 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F4F4F4"
+        android:background="#F8F7F5"
         android:contentDescription="@string/categorias">
+
+        <ImageView
+            android:id="@+id/app_name4"
+            android:layout_width="229dp"
+            android:layout_height="89dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:contentDescription="@string/app_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/app_logo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/nombre" />
+
+        <ImageView
+            android:id="@+id/app_logo2"
+            android:layout_width="137dp"
+            android:layout_height="101dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="28dp"
+            android:contentDescription="logoapp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/mdmlogo" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline"
@@ -64,7 +91,7 @@
             android:layout_marginEnd="157dp"
             android:layout_marginRight="157dp"
             android:layout_marginBottom="98dp"
-            android:background="#FFFFFF"
+            android:background="#FFCE0A"
             android:contentDescription="@string/button"
             android:onClick="busqueda_necesidades"
             android:text="@string/button"
@@ -94,28 +121,6 @@
             android:verticalScrollbarPosition="left"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/user_photo" />
-
-        <ImageView
-            android:id="@+id/app_logo"
-            android:layout_width="137dp"
-            android:layout_height="101dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="28dp"
-            android:contentDescription="@string/app_logo"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/mdmlogo" />
-
-        <ImageView
-            android:id="@+id/app_name"
-            android:layout_width="212dp"
-            android:layout_height="82dp"
-            android:layout_marginStart="13dp"
-            android:layout_marginTop="50dp"
-            android:contentDescription="@string/app_name"
-            app:layout_constraintStart_toEndOf="@+id/app_logo"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/nombre" />
 
         <ImageView
             android:id="@+id/user_photo"
