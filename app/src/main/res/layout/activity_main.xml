@@ -5,16 +5,17 @@
     android:id="@+id/principio"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFCC00"
+    android:background="#FFCE0A"
     tools:context=".MainActivity">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:layout_width="307dp"
+            android:layout_height="56dp"
             android:text="ME DOY MAÑA"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="#000000"
-            android:textSize="40sp"
+            android:textSize="44sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -22,35 +23,21 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.1" />
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="218dp"
-            android:layout_height="234dp"
-            android:layout_marginStart="96dp"
-            android:layout_marginLeft="96dp"
-            android:layout_marginTop="186dp"
-            android:layout_marginEnd="97dp"
-            android:layout_marginRight="97dp"
-            android:layout_marginBottom="311dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/medoymana" />
-
         <Button
             android:id="@+id/botingresar"
             android:layout_width="305dp"
-            android:layout_height="58dp"
-            android:layout_marginStart="52dp"
-            android:layout_marginLeft="52dp"
+            android:layout_height="69dp"
+            android:layout_marginStart="58dp"
+            android:layout_marginLeft="58dp"
             android:layout_marginTop="458dp"
-            android:layout_marginEnd="54dp"
-            android:layout_marginRight="54dp"
+            android:layout_marginEnd="59dp"
+            android:layout_marginRight="59dp"
             android:layout_marginBottom="215dp"
+            android:background="#FFBE0A"
             android:onClick="botingresar"
             android:text="INGRESAR"
-            android:textSize="30sp"
+            android:textColor="#000000"
+            android:textSize="28sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +45,7 @@
 
         <Button
             android:id="@+id/botcrearusuario"
-            android:layout_width="294dp"
+            android:layout_width="305dp"
             android:layout_height="69dp"
             android:layout_marginStart="58dp"
             android:layout_marginLeft="58dp"
@@ -66,12 +53,26 @@
             android:layout_marginEnd="59dp"
             android:layout_marginRight="59dp"
             android:layout_marginBottom="120dp"
+            android:background="#FFBE0A"
             android:onClick="botcrearusuario"
             android:text="CREAR USUARIO"
-            android:textSize="25sp"
+            android:textColor="#000000"
+            android:textSize="28sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="301dp"
+            android:layout_height="226dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.378"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.318"
+            app:srcCompat="@drawable/logo_amarillo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
