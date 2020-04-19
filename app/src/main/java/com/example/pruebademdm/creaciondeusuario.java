@@ -50,7 +50,7 @@ public class creaciondeusuario extends AppCompatActivity {
         request.add("email", email);
         request.add("password", password);
         request.add("calle","");
-        request.add("numero de puerta","");
+        request.add("numero de puerta",0);
         request.add("esquina 1","");
         request.add("esquina 2","");
 
