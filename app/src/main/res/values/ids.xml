@@ -4,4 +4,5 @@
     <item name="text_home" type="id" />
     <item name="text_send" type="id" />
     <item name="text_share" type="id" />
+    <item name="enviarMensaje" type="id"></item>
 </resources>
