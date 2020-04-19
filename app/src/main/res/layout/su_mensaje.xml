@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingVertical="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/Usuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="100dp"
+            android:paddingBottom="4dp"
+            android:text="Usuario" />
+
+        <TextView
+            android:id="@+id/boxMensaje"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Usuario"
+            android:layout_alignLeft="@+id/Usuario"
+            android:background="@drawable/their_message"
+            android:elevation="2dp"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="12dp"
+            android:text="Mensaje"
+            android:textSize="18dp" />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
