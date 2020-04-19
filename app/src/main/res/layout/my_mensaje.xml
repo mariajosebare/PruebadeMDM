@@ -15,7 +15,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.005">
+        app:layout_constraintVertical_bias="0.005"
+        android:paddingStart="60dp"
+        android:paddingEnd="15dp">
 
         <TextView
             android:id="@+id/boxMensaje"
@@ -27,7 +29,8 @@
             android:padding="10dp"
             android:text="Mensaje"
             android:textColor="#fff"
-            android:textSize="18dp" />
+            android:textSize="18sp"
+            android:layout_alignParentEnd="true" />
 
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

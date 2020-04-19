@@ -15,28 +15,34 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.0"
+        android:paddingStart="15dp"
+        android:paddingEnd="60dp">
 
         <TextView
             android:id="@+id/Usuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="100dp"
             android:paddingBottom="4dp"
-            android:text="Usuario" />
+            android:text="@string/user_name"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/boxMensaje"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/Usuario"
+            android:layout_alignStart="@+id/Usuario"
             android:layout_alignLeft="@+id/Usuario"
             android:background="@drawable/their_message"
             android:elevation="2dp"
             android:paddingHorizontal="16dp"
             android:paddingVertical="12dp"
             android:text="Mensaje"
-            android:textSize="18dp" />
+            android:textSize="24sp"
+            app:drawableTint="#42D1E3" />
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

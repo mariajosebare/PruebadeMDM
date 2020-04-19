@@ -9,46 +9,50 @@
     tools:context=".chat">
 
     <ScrollView
+        android:id="@+id/listaMensajes"
         android:layout_width="match_parent"
-        android:layout_height="685dp">
+        android:layout_height="685dp"
+        android:background="#FFFFFF">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#FFCE0A"
             android:orientation="vertical" />
     </ScrollView>
 
-    <resources>
-        <string android:name="input_placeholder"></string>
-    </resources>
-
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#fff"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/textMensaje"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:ems="10"
-            android:hint="Escriba su mensaje"
-            android:inputType="text"
-            android:paddingHorizontal="10dp"
-            android:text="" />
+            android:background="#fff"
+            android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:scaleType="fitCenter"
-            android:padding="20dp"
-            android:layout_marginHorizontal="10dp"
-            android:background="@drawable/ic_menu_send"
-            android:onClick="enviarMensaje"/>
+            <EditText
+                android:id="@+id/textMensaje"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:ems="10"
+                android:hint="Escriba su mensaje"
+                android:inputType="text"
+                android:paddingHorizontal="10dp"
+                android:text=""
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textSize="24sp"
+                android:typeface="sans" />
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="10dp"
+                android:background="@drawable/ic_menu_send"
+                android:contentDescription="@string/button"
+                android:onClick="enviarMensaje"
+                android:padding="20dp"
+                android:scaleType="fitCenter"
+                android:tint="#FFCE0A" />
 
     </LinearLayout>
 

@@ -41,6 +41,7 @@ public class chat extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
         // Finaliza codigo icono action bar
+
         // Crear Handler
         Handler handler = new Handler();
             Runnable runnableCode = new Runnable() {
