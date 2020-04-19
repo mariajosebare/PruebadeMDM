@@ -42,13 +42,18 @@ public class creaciondeusuario extends AppCompatActivity {
         String email = ((EditText) findViewById(R.id.email)).getText().toString();
         String password = ((EditText) findViewById(R.id.password)).getText().toString();
         RequestParams request = new RequestParams();
-        request.add("Nombre", Nombre);
-        request.add("Apellido", Apellido);
-        request.add("Telefono", Telefono);
+        request.add("nombre", Nombre);
+        request.add("apellido", Apellido);
+        request.add("telefono", Telefono);
         request.add("ci", Documento);
-        request.add("fecha_nacimiento", fecha_nacimiento);
+        request.add("fecha de nacimiento", fecha_nacimiento);
         request.add("email", email);
         request.add("password", password);
+        request.add("calle","");
+        request.add("numero de puerta","");
+        request.add("esquina 1","");
+        request.add("esquina 2","");
+
         HttpUtils.put("/usuarios", request, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
