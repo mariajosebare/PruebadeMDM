@@ -5,11 +5,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -20,6 +23,7 @@ import java.util.List;
 
 import c.e.p.util.HttpUtils;
 import cz.msebera.android.httpclient.Header;
+import es.dmoral.toasty.Toasty;
 
 //public class main_log implements xml {
 //}   @Override
@@ -38,7 +42,7 @@ import cz.msebera.android.httpclient.Header;
             final main_log pantalla = this;
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main_log);
-            HttpUtils.get("/necesidades", null, new AsyncHttpResponseHandler() {
+            HttpUtils.get("/habilidades", null, new AsyncHttpResponseHandler() {
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                     try {
@@ -72,9 +76,29 @@ import cz.msebera.android.httpclient.Header;
         }
 
         // Comienza metodo boton buscar necesidad
-        public void busquedanece (View view) {
-            Intent busquedanece = new Intent(this, main_resultadosmatch.class);
-            startActivity(busquedanece);
+        public void busqueda_necesidades (View view) {
+            final Intent busqueda_necesidades = new Intent(this, main_resultadosmatch.class);
+            String necesidad = ((EditText) findViewById(R.id.escribir_necesidad)).getText().toString();
+            RequestParams request = new RequestParams();
+            request.add("id_usuario", "2");
+            request.add("id_habilidad", "1");
+            request.add("necesidad",necesidad);
+            HttpUtils.put("/necesidades", request, new AsyncHttpResponseHandler() {
+                @Override
+                public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                    startActivity(busqueda_necesidades);
+                }
+
+                @Override
+                public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                    Toasty.error(getApplicationContext(),
+                            "Ha ocurrido un error",
+                            Toast.LENGTH_SHORT,
+                            true
+                    ).show();
+                }
+            });
+
             // Finaliza metodo boton buscar necesidad
         }
 
