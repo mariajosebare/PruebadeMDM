@@ -9,8 +9,8 @@
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="275dp"
-        android:layout_height="63dp"
+        android:layout_width="259dp"
+        android:layout_height="53dp"
         android:layout_marginStart="68dp"
         android:layout_marginLeft="68dp"
         android:layout_marginTop="36dp"
@@ -33,11 +33,13 @@
         android:layout_marginTop="21dp"
         android:layout_marginEnd="49dp"
         android:layout_marginRight="49dp"
+        android:layout_marginBottom="569dp"
         android:ems="10"
         android:gravity="start|top"
         android:hint="Nombre"
         android:inputType="textMultiLine"
         android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
@@ -48,33 +50,37 @@
         android:layout_height="38dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="179dp"
         android:layout_marginEnd="48dp"
         android:layout_marginRight="48dp"
+        android:layout_marginBottom="514dp"
         android:ems="10"
         android:gravity="start|top"
         android:hint="Apellido"
         android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Nombre" />
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <EditText
         android:id="@+id/Telefono"
-        android:layout_width="134dp"
-        android:layout_height="67dp"
+        android:layout_width="178dp"
+        android:layout_height="55dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginRight="64dp"
+        android:layout_marginTop="232dp"
+        android:layout_marginEnd="209dp"
+        android:layout_marginRight="209dp"
+        android:layout_marginBottom="444dp"
         android:ems="10"
-        android:hint="Telefno"
+        android:hint="Telefono"
         android:inputType="phone"
-        app:layout_constraintEnd_toStartOf="@+id/Documento"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Apellido" />
-
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/Documento"
@@ -97,62 +103,50 @@
 
 
     <EditText
-        android:id="@+id/correo"
+        android:id="@+id/email"
         android:layout_width="339dp"
         android:layout_height="43dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="23dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginRight="48dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="403dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginRight="53dp"
+        android:layout_marginBottom="285dp"
         android:ems="10"
-        android:hint="Correo"
+        android:hint="Email"
         android:inputType="textMultiLine"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Telefono" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/contraseña"
-        android:layout_width="328dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="23dp"
-        android:layout_marginEnd="51dp"
-        android:layout_marginRight="51dp"
+        android:id="@+id/password"
+        android:layout_width="339dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="474dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginRight="53dp"
+        android:layout_marginBottom="214dp"
         android:ems="10"
-        android:hint="Contraseña"
+        android:hint="Password"
         android:inputType="textPassword"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/correo" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="76dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="29dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginRight="9dp"
-        android:layout_marginBottom="220dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contraseña"
-        app:srcCompat="@drawable/ic_menu_camera"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/validarusuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginLeft="14dp"
+        android:layout_marginStart="261dp"
+        android:layout_marginLeft="261dp"
+        android:layout_marginTop="647dp"
         android:layout_marginEnd="62dp"
         android:layout_marginRight="62dp"
         android:layout_marginBottom="36dp"
@@ -160,19 +154,44 @@
         android:text="Crear"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView5" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="130dp"
-        android:layout_height="223dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="164dp"
-        android:layout_marginRight="164dp"
-        android:layout_marginBottom="69dp"
+    <EditText
+        android:id="@+id/fecha_nacimiento"
+        android:layout_width="336dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="318dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginRight="56dp"
+        android:layout_marginBottom="351dp"
+        android:ems="10"
+        android:hint="Fecha de nacimiento "
+        android:inputType="date"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contraseña"
-        app:srcCompat="@drawable/chef" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/repetir_pass"
+        android:layout_width="335dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="536dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginRight="57dp"
+        android:layout_marginBottom="149dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Repetir password"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

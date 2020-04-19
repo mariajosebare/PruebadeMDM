@@ -28,7 +28,7 @@
             android:layout_marginRight="411dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintGuide_begin="644dp"
+            app:layout_constraintGuide_begin="692dp"
             app:layout_constraintStart_toStartOf="parent" />
 
         <View
