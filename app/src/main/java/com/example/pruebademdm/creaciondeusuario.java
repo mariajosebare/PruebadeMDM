@@ -49,7 +49,7 @@ public class creaciondeusuario extends AppCompatActivity {
         request.add("fecha_nacimiento", fecha_nacimiento);
         request.add("email", email);
         request.add("password", password);
-        HttpUtils.post("/usuarios", request, new AsyncHttpResponseHandler() {
+        HttpUtils.put("/usuarios", request, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 try {
