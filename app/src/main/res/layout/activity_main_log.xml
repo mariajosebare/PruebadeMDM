@@ -36,17 +36,15 @@
             android:id="@+id/user_name"
             android:layout_width="138dp"
             android:layout_height="53dp"
-            android:layout_marginStart="24dp"
             android:contentDescription="@string/user_name"
             android:text="@string/user_name"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/user_photo"
+            app:layout_constraintHorizontal_bias="0.743"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.349"
-            android:layout_marginLeft="24dp" />
+            app:layout_constraintVertical_bias="0.349" />
 
         <Button
             android:id="@+id/busquedanece"
@@ -54,7 +52,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="166dp"
             android:layout_marginLeft="166dp"
-            android:layout_marginTop="585dp"
             android:layout_marginEnd="157dp"
             android:layout_marginRight="157dp"
             android:layout_marginBottom="98dp"
@@ -66,15 +63,16 @@
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline"
+            app:layout_constraintVertical_bias="0.899"
             tools:text="@string/button" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/escribir_necesidad"
             android:layout_width="257dp"
             android:layout_height="85dp"
-            android:layout_marginTop="24dp"
             android:contentDescription="@string/necesidad"
             android:gravity="start|top"
             android:hint="Hola Maria Perez, ¿qué necesitas?"
@@ -89,8 +87,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.545"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/user_photo"
-            app:layout_constraintVertical_bias="0.014" />
+            app:layout_constraintTop_toTopOf="@+id/guideline"
+            app:layout_constraintVertical_bias="0.334" />
 
         <ImageView
             android:id="@+id/user_photo"
@@ -109,15 +107,14 @@
             android:id="@+id/categorias"
             android:layout_width="259dp"
             android:layout_height="57dp"
-            android:layout_marginStart="84dp"
-            android:layout_marginLeft="84dp"
-            android:layout_marginTop="16dp"
             android:spinnerMode="dropdown"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.552"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/escribir_necesidad"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintTop_toTopOf="@+id/guideline"
+            app:layout_constraintVertical_bias="0.499"
             tools:visibility="visible" />
 
         <ImageView
