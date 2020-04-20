@@ -12,37 +12,11 @@
         android:background="#F8F7F5"
         android:contentDescription="@string/categorias">
 
-        <ImageView
-            android:id="@+id/app_name4"
-            android:layout_width="229dp"
-            android:layout_height="89dp"
-            android:layout_marginStart="13dp"
-            android:layout_marginLeft="13dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:contentDescription="@string/app_name"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/app_logo"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/nombre" />
-
-        <ImageView
-            android:id="@+id/app_logo2"
-            android:layout_width="137dp"
-            android:layout_height="101dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="28dp"
-            android:contentDescription="logoapp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/mdmlogo" />
-
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="#FFCE0A"
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="147dp"
             app:layout_constraintStart_toStartOf="parent" />
@@ -58,28 +32,21 @@
             app:layout_constraintGuide_begin="692dp"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <View
-            android:id="@+id/divider"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="148dp"
-            android:layout_marginBottom="582dp"
-            android:background="?android:attr/listDivider"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="6dp" />
-
         <TextView
             android:id="@+id/user_name"
-            android:layout_width="187dp"
+            android:layout_width="138dp"
             android:layout_height="53dp"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="72dp"
             android:contentDescription="@string/user_name"
             android:text="@string/user_name"
             android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/user_photo"
-            app:layout_constraintTop_toBottomOf="@+id/divider" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.349"
+            android:layout_marginLeft="24dp" />
 
         <Button
             android:id="@+id/busquedanece"
@@ -105,10 +72,9 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/escribir_necesidad"
-            android:layout_width="311dp"
-            android:layout_height="93dp"
-            android:layout_marginStart="56dp"
-            android:layout_marginTop="12dp"
+            android:layout_width="257dp"
+            android:layout_height="85dp"
+            android:layout_marginTop="24dp"
             android:contentDescription="@string/necesidad"
             android:gravity="start|top"
             android:hint="Hola Maria Perez, ¿qué necesitas?"
@@ -119,32 +85,64 @@
             android:textSize="24sp"
             android:typeface="sans"
             android:verticalScrollbarPosition="left"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.545"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/user_photo" />
+            app:layout_constraintTop_toBottomOf="@+id/user_photo"
+            app:layout_constraintVertical_bias="0.014" />
 
         <ImageView
             android:id="@+id/user_photo"
             android:layout_width="99dp"
             android:layout_height="106dp"
-            android:layout_marginStart="56dp"
-            android:layout_marginTop="20dp"
             android:contentDescription="@string/photo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.269"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/divider"
+            app:layout_constraintTop_toTopOf="@+id/guideline"
+            app:layout_constraintVertical_bias="0.079"
             app:srcCompat="@drawable/limpiando" />
 
         <Spinner
             android:id="@+id/categorias"
-            android:layout_width="301dp"
-            android:layout_height="17dp"
-            android:layout_marginStart="56dp"
-            android:layout_marginLeft="56dp"
-            android:layout_marginTop="12dp"
+            android:layout_width="259dp"
+            android:layout_height="57dp"
+            android:layout_marginStart="84dp"
+            android:layout_marginLeft="84dp"
+            android:layout_marginTop="16dp"
             android:spinnerMode="dropdown"
             android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/escribir_necesidad"
+            app:layout_constraintVertical_bias="0.0"
             tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/app_name4"
+            android:layout_width="360dp"
+            android:layout_height="119dp"
+            android:layout_marginStart="116dp"
+            android:layout_marginLeft="116dp"
+            android:contentDescription="@string/app_name"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/nombre" />
+
+        <ImageView
+            android:id="@+id/app_logo2"
+            android:layout_width="120dp"
+            android:layout_height="616dp"
+            android:layout_marginBottom="364dp"
+            android:contentDescription="logoapp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/app_name4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/mdmlogo" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
