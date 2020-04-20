@@ -16,7 +16,6 @@
             android:layout_marginLeft="58dp"
             android:layout_marginEnd="59dp"
             android:layout_marginRight="59dp"
-            android:layout_marginBottom="215dp"
             android:background="#FFBE0A"
             android:onClick="botingresar"
             android:text="INGRESAR"
@@ -28,8 +27,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.454"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView5"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.67" />
 
         <Button
             android:id="@+id/botcrearusuario"
@@ -39,7 +38,6 @@
             android:layout_marginLeft="58dp"
             android:layout_marginEnd="59dp"
             android:layout_marginRight="59dp"
-            android:layout_marginBottom="120dp"
             android:background="#FFBE0A"
             android:onClick="botcrearusuario"
             android:text="CREAR USUARIO"
@@ -51,19 +49,19 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.454"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/botingresar"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.811" />
 
         <ImageView
             android:id="@+id/imageView5"
-            android:layout_width="411dp"
-            android:layout_height="305dp"
+            android:layout_width="374dp"
+            android:layout_height="273dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.567"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.244"
+            app:layout_constraintVertical_bias="0.288"
             app:srcCompat="@drawable/logo_amarillo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
