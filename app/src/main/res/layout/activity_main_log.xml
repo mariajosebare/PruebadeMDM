@@ -122,10 +122,10 @@
 
         <ImageView
             android:id="@+id/app_name4"
-            android:layout_width="360dp"
-            android:layout_height="119dp"
-            android:layout_marginStart="116dp"
-            android:layout_marginLeft="116dp"
+            android:layout_width="365dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="104dp"
+            android:layout_marginLeft="104dp"
             android:contentDescription="@string/app_name"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -137,11 +137,14 @@
             android:id="@+id/app_logo2"
             android:layout_width="120dp"
             android:layout_height="616dp"
-            android:layout_marginBottom="364dp"
+            android:layout_marginBottom="368dp"
             android:contentDescription="logoapp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/app_name4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.984"
             app:srcCompat="@drawable/mdmlogo" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
