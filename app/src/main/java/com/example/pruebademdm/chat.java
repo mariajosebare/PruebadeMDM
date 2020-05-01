@@ -9,8 +9,10 @@ import android.service.autofill.UserData;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
@@ -21,6 +23,7 @@ import com.loopj.android.http.RequestParams;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,9 +34,11 @@ import cz.msebera.android.httpclient.Header;
 public class chat extends AppCompatActivity {
 
     private EditText editText;
+    ArrayList<String> listaMensajes=new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        final chat pantalla = this;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
@@ -52,6 +57,13 @@ public class chat extends AppCompatActivity {
                     public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                         try {
                             JSONArray mensajes=new JSONArray(new String(responseBody));
+                            for (int i = 0; i < mensajes.length(); i++) {
+                                JSONObject mensaje = mensajes.getJSONObject(i);
+                                listaMensajes.add(mensaje.getString("mensaje"));
+                            }
+                            ListView lista = findViewById(R.id.listaMensaje);
+                            ArrayAdapter<String> adapter = new ArrayAdapter<String>(pantalla, android.R.layout.simple_list_item_1, listaMensajes);
+                            lista.setAdapter(adapter);
                         }
                         catch (JSONException e) {
                             e.printStackTrace();
