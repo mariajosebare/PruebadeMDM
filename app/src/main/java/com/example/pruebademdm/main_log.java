@@ -48,12 +48,12 @@ import es.dmoral.toasty.Toasty;
                     try {
                         JSONArray response_habilidades=new JSONArray(new String(responseBody));
                         Spinner categorias = findViewById(R.id.categorias);
-                        List<String> habilidades = new ArrayList<String>();
+                        List<Habilidad> habilidades = new ArrayList<Habilidad>();
                         for (int i = 0; i < response_habilidades.length(); i++) {
                             JSONObject habilidad = response_habilidades.getJSONObject(i);
-                            habilidades.add(habilidad.getString("nombre"));
+                            habilidades.add(new Habilidad(habilidad.getString("ID_habilidad"),habilidad.getString("nombre")));
                         }
-                        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(pantalla,
+                        ArrayAdapter<Habilidad> dataAdapter = new ArrayAdapter<Habilidad>(pantalla,
                                 android.R.layout.simple_spinner_item, habilidades);
                         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                         categorias.setAdapter(dataAdapter);
@@ -79,9 +79,10 @@ import es.dmoral.toasty.Toasty;
         public void busqueda_necesidades (View view) {
             final Intent busqueda_necesidades = new Intent(this, main_resultadosmatch.class);
             String necesidad = ((EditText) findViewById(R.id.escribir_necesidad)).getText().toString();
+            String idHabilidad = ((Habilidad) ((Spinner) findViewById(R.id.categorias)).getSelectedItem()).getId();
             RequestParams request = new RequestParams();
             request.add("id_usuario", "2");
-            request.add("id_habilidad", "1");
+            request.add("id_habilidad", idHabilidad);
             request.add("necesidad",necesidad);
             HttpUtils.put("/necesidades", request, new AsyncHttpResponseHandler() {
                 @Override
@@ -102,6 +103,23 @@ import es.dmoral.toasty.Toasty;
             // Finaliza metodo boton buscar necesidad
         }
 
+    }
 
+    class Habilidad {
+        String _id;
+        String _nombre;
+
+        Habilidad (String id, String nombre) {
+            _id = id;
+            _nombre = nombre;
+        }
+
+        public String getId(){
+            return _id;
+        }
+
+        public String toString(){
+           return _nombre;
+        }
     }
 

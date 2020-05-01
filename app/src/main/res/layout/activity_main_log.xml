@@ -79,7 +79,7 @@
             android:orientation="horizontal"
             android:textAllCaps="false"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="#00000000"
+            android:textColor="#FA000000"
             android:textSize="24sp"
             android:typeface="sans"
             android:verticalScrollbarPosition="left"
