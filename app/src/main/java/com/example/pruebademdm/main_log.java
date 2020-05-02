@@ -1,7 +1,9 @@
 package com.example.pruebademdm;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -36,6 +38,11 @@ import es.dmoral.toasty.Toasty;
     //}
 //}
     public class main_log extends AppCompatActivity {
+
+        public static final String MyPREFERENCES = "Preferencias";
+        public static final String USUARIO_ID = "usuario_id";
+        public static final String USUARIO_NOMBRE = "usuario_nombre";
+        public static final String USUARIO_APELLIDO = "usuario_apellido";
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -78,10 +85,12 @@ import es.dmoral.toasty.Toasty;
         // Comienza metodo boton buscar necesidad
         public void busqueda_necesidades (View view) {
             final Intent busqueda_necesidades = new Intent(this, main_resultadosmatch.class);
+            final SharedPreferences sharedpreference = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
             String necesidad = ((EditText) findViewById(R.id.escribir_necesidad)).getText().toString();
             String idHabilidad = ((Habilidad) ((Spinner) findViewById(R.id.categorias)).getSelectedItem()).getId();
+            String idUsuario = sharedpreference.getString(USUARIO_ID, "");
             RequestParams request = new RequestParams();
-            request.add("id_usuario", "2");
+            request.add("id_usuario", idUsuario);
             request.add("id_habilidad", idHabilidad);
             request.add("necesidad",necesidad);
             HttpUtils.put("/necesidades", request, new AsyncHttpResponseHandler() {
