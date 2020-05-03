@@ -60,8 +60,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
-        android:layout_width="280dp"
-        android:layout_height="229dp"
+        android:layout_width="387dp"
+        android:layout_height="218dp"
         android:layout_marginTop="210dp"
         android:layout_marginBottom="87dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -75,7 +75,7 @@
 
             <CheckBox
                 android:id="@+id/checkBox1"
-                android:layout_width="match_parent"
+                android:layout_width="252dp"
                 android:layout_height="wrap_content"
                 android:text="Acupunturista" />
 
@@ -165,10 +165,10 @@
                 android:text="Cuidado de niños" />
 
             <CheckBox
-            android:id="@+id/checkBox16"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Cuidador de animales" />
+                android:id="@+id/checkBox16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cuidador de animales" />
 
             <CheckBox
                 android:id="@+id/checkBox17"
@@ -205,76 +205,91 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Filmacion" />
+
             <CheckBox
                 android:id="@+id/checkBox23"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Florista" />
+
             <CheckBox
                 android:id="@+id/checkBox24"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Fontanero o plomero" />
+
             <CheckBox
                 android:id="@+id/checkBox25"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Fotografia" />
+
             <CheckBox
                 android:id="@+id/checkBox26"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Instalador de alfombras" />
+
             <CheckBox
                 android:id="@+id/checkBox27"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Interprete y traductores" />
+
             <CheckBox
                 android:id="@+id/checkBox28"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Jardinero" />
+
             <CheckBox
                 android:id="@+id/checkBox29"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Joyero" />
+
             <CheckBox
                 android:id="@+id/checkBox30"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Lavandero" />
+
             <CheckBox
                 android:id="@+id/checkBox31"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Leñador" />
+
             <CheckBox
                 android:id="@+id/checkBox32"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Limpieza" />
+
             <CheckBox
                 android:id="@+id/checkBox33"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Maestra" />
+
             <CheckBox
                 android:id="@+id/checkBox34"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Manicura" />
+
             <CheckBox
                 android:id="@+id/checkBox35"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Manualidades" />
+
             <CheckBox
                 android:id="@+id/checkBox36"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Mecánico" />
+
             <CheckBox
                 android:id="@+id/checkBox37"
                 android:layout_width="match_parent"
@@ -282,10 +297,10 @@
                 android:text="Modista" />
 
             <CheckBox
-            android:id="@+id/checkBox38"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Obrero" />
+                android:id="@+id/checkBox38"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Obrero" />
 
             <CheckBox
                 android:id="@+id/checkBox39"
