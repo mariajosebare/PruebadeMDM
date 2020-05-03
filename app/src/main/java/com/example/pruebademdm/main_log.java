@@ -43,10 +43,12 @@ import es.dmoral.toasty.Toasty;
         public static final String USUARIO_ID = "usuario_id";
         public static final String USUARIO_NOMBRE = "usuario_nombre";
         public static final String USUARIO_APELLIDO = "usuario_apellido";
+        public static final String NECESIDAD_SELECCIONADA = "necesidad";
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             final main_log pantalla = this;
+            final SharedPreferences sharedpreference = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main_log);
             HttpUtils.get("/habilidades", null, new AsyncHttpResponseHandler() {
@@ -90,13 +92,22 @@ import es.dmoral.toasty.Toasty;
             String idHabilidad = ((Habilidad) ((Spinner) findViewById(R.id.categorias)).getSelectedItem()).getId();
             String idUsuario = sharedpreference.getString(USUARIO_ID, "");
             RequestParams request = new RequestParams();
-            request.add("id_usuario", idUsuario);
-            request.add("id_habilidad", idHabilidad);
+            request.add("ID_usuario", idUsuario);
+            request.add("ID_habilidad", idHabilidad);
             request.add("necesidad",necesidad);
             HttpUtils.put("/necesidades", request, new AsyncHttpResponseHandler() {
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                    startActivity(busqueda_necesidades);
+                    try {
+                        JSONObject response_necesidad = new JSONObject(new String(responseBody));
+                        String necesidadId = response_necesidad.getString("ID_necesidad");
+                        SharedPreferences.Editor editor = sharedpreference.edit();
+                        editor.putString(NECESIDAD_SELECCIONADA, necesidadId);
+                        editor.commit();
+                        startActivity(busqueda_necesidades);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
 
                 @Override

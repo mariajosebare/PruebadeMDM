@@ -50,9 +50,9 @@ public class Login extends AppCompatActivity {
                         //Creamos el codigo nesesario para que luego de logueado nos guarde los datos.
                         SharedPreferences.Editor editor = sharedpreferences.edit();
                         JSONObject usuario = response.getJSONObject("usuario");
-                        String idUsuario = response.getString("ID_usuario");
-                        String  nombreUsuario= response.getString("nombre");
-                        String apellidoUsuario = response.getString("apellido");
+                        String idUsuario = usuario.getString("ID_usuario");
+                        String nombreUsuario= usuario.getString("nombre");
+                        String apellidoUsuario = usuario.getString("apellido");
                         editor.putString(USUARIO_ID,idUsuario);
                         editor.putString(USUARIO_NOMBRE, nombreUsuario);
                         editor.putString(USUARIO_APELLIDO, apellidoUsuario);
