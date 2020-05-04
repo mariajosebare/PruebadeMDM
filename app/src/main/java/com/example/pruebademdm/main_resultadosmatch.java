@@ -5,15 +5,14 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
-import android.widget.Spinner;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.loopj.android.http.AsyncHttpResponseHandler;
-import com.loopj.android.http.RequestParams;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -46,27 +45,37 @@ public class main_resultadosmatch  extends AppCompatActivity {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 try {
-                    JSONArray response_habilidades=new JSONArray(new String(responseBody));
-                    Spinner categorias = findViewById(R.id.categorias);
-                    List<Habilidad> habilidades = new ArrayList<Habilidad>();
-                    for (int i = 0; i < response_habilidades.length(); i++) {
-                        JSONObject habilidad = response_habilidades.getJSONObject(i);
-                        habilidades.add(new Habilidad(habilidad.getString("ID_habilidad"),habilidad.getString("nombre")));
-                    }
-                    ArrayAdapter<Habilidad> dataAdapter = new ArrayAdapter<Habilidad>(pantalla,
-                            android.R.layout.simple_spinner_item, habilidades);
-                    dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                    categorias.setAdapter(dataAdapter);
+                    JSONObject response_habilidades = new JSONObject(new String(responseBody));
+                    ScrollView scroll_layout = findViewById(R.id.scrollViewmatch);
+                    List<Necesidad> necesidades = new ArrayList<Necesidad>();
+                    JSONArray necesidadesJSON = response_habilidades.getJSONArray("necesidades");
+                    JSONObject publicacionJSON = response_habilidades.getJSONObject("publicacion");
+                    String miDescripcion = publicacionJSON.getString("descripcion_necesidad");
+                    String habilidad = publicacionJSON.getJSONObject("habilidad").getString("nombre");
+                    for (int i = 0; i < necesidadesJSON.length(); i++) {
+                        JSONObject necesidadJSON = necesidadesJSON.getJSONObject(i);
+                        JSONObject usuarioJSON = necesidadJSON.getJSONObject("usuario");
+                        Necesidad necesidad = new Necesidad();
+                        necesidad.set_descripcion(necesidadJSON.getString("descripcion_necesidad"));
+                        necesidad.set_idNecesidad(necesidadJSON.getString("ID_necesidad"));
+                        necesidad.set_idUsuario(necesidadJSON.getString("ID_usuario"));
+                        necesidad.set_nombreUsuario(usuarioJSON.getString("nombre"));
+                        necesidad.set_apellidoUsuario(usuarioJSON.getString("apellido"));
+                        necesidades.add(necesidad);
+                        TextView texto = new TextView(pantalla);
+                        texto.setText(necesidad.get_nombreUsuario() + "" + necesidad.get_apellidoUsuario() + "" + necesidad.get_descripcion() + "");
+                        scroll_layout.addView(texto);
 
+
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
                     //Comienza el codigo para colocar icono en el action bar
                     getSupportActionBar().setDisplayShowHomeEnabled(true);
                     getSupportActionBar().setIcon(R.mipmap.ic_launcher);
                     // Finaliza codigo icono action bar
-                } catch (JSONException e) {
-                    e.printStackTrace();
                 }
-
-            }
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
@@ -95,5 +104,67 @@ public class main_resultadosmatch  extends AppCompatActivity {
         // Finaliza metodo boton para ir al chat
     }
 }
+class Necesidad {
+    private String _idNecesidad;
+    private String _descripcion;
+    private String _idUsuario;
+    private String _nombreUsuario;
+    private String _apellidoUsuario;
+
+    public String get_idNecesidad() {
+        return _idNecesidad;
+    }
+
+    public void set_idNecesidad(String _idNecesidad) {
+        this._idNecesidad = _idNecesidad;
+    }
+
+    public String get_descripcion() {
+        return _descripcion;
+    }
+
+    public void set_descripcion(String _descripcion) {
+        this._descripcion = _descripcion;
+    }
+
+    public String get_idUsuario() {
+        return _idUsuario;
+    }
+
+    public void set_idUsuario(String _idUsuario) {
+        this._idUsuario = _idUsuario;
+    }
+
+    public String get_nombreUsuario() {
+        return _nombreUsuario;
+    }
+
+    public void set_nombreUsuario(String _nombreUsuario) {
+        this._nombreUsuario = _nombreUsuario;
+    }
+
+    public String get_apellidoUsuario() {
+        return _apellidoUsuario;
+    }
+
+    public void set_apellidoUsuario(String _apellidoUsuario) {
+        this._apellidoUsuario = _apellidoUsuario;
+    }
+
+
+
+    Necesidad(String idNecesidad, String descripcion, String idUsuario, String nombre, String apellido) {
+        _idNecesidad = idNecesidad;
+        _descripcion = descripcion;
+        _idUsuario = idUsuario;
+        _nombreUsuario = nombre;
+        _apellidoUsuario = apellido;
+    }
+    Necesidad()
+    {
+
+    }
+}
+
 
 
