@@ -90,19 +90,6 @@
             app:layout_constraintTop_toTopOf="@+id/guideline"
             app:layout_constraintVertical_bias="0.334" />
 
-        <ImageView
-            android:id="@+id/user_photo"
-            android:layout_width="99dp"
-            android:layout_height="106dp"
-            android:contentDescription="@string/photo"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.269"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline"
-            app:layout_constraintVertical_bias="0.079"
-            app:srcCompat="@drawable/limpiando" />
-
         <Spinner
             android:id="@+id/categorias"
             android:layout_width="259dp"
@@ -116,33 +103,6 @@
             app:layout_constraintTop_toTopOf="@+id/guideline"
             app:layout_constraintVertical_bias="0.499"
             tools:visibility="visible" />
-
-        <ImageView
-            android:id="@+id/app_name4"
-            android:layout_width="365dp"
-            android:layout_height="120dp"
-            android:layout_marginStart="104dp"
-            android:layout_marginLeft="104dp"
-            android:contentDescription="@string/app_name"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/nombre" />
-
-        <ImageView
-            android:id="@+id/app_logo2"
-            android:layout_width="120dp"
-            android:layout_height="616dp"
-            android:layout_marginBottom="368dp"
-            android:contentDescription="logoapp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.984"
-            app:srcCompat="@drawable/mdmlogo" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
