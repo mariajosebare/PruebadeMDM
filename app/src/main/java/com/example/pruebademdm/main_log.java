@@ -29,6 +29,10 @@ import c.e.p.util.HttpUtils;
 import cz.msebera.android.httpclient.Header;
 import es.dmoral.toasty.Toasty;
 
+import static com.example.pruebademdm.Login.MyPREFERENCES;
+import static com.example.pruebademdm.Login.NECESIDAD_SELECCIONADA;
+import static com.example.pruebademdm.Login.USUARIO_ID;
+
 //public class main_log implements xml {
 //}   @Override
 //protected void onCreate(Bundle savedInstanceState) {
@@ -41,16 +45,9 @@ import es.dmoral.toasty.Toasty;
 //}
     public class main_log extends AppCompatActivity {
 
-        public static final String MyPREFERENCES = "Preferencias";
-        public static final String USUARIO_ID = "usuario_id";
-        public static final String USUARIO_NOMBRE = "usuario_nombre";
-        public static final String USUARIO_APELLIDO = "usuario_apellido";
-        public static final String NECESIDAD_SELECCIONADA = "necesidad";
-
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             final main_log pantalla = this;
-            final SharedPreferences sharedpreference = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main_log);
             HttpUtils.get("/habilidades", null, new AsyncHttpResponseHandler() {
@@ -111,10 +108,10 @@ startActivity(new Intent(this, MainActivity.class));
         // Comienza metodo boton buscar necesidad
         public void busqueda_necesidades (View view) {
             final Intent busqueda_necesidades = new Intent(this, main_resultadosmatch.class);
-            final SharedPreferences sharedpreference = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+            final SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
             String necesidad = ((EditText) findViewById(R.id.escribir_necesidad)).getText().toString();
             String idHabilidad = ((Habilidad) ((Spinner) findViewById(R.id.categorias)).getSelectedItem()).getId();
-            String idUsuario = sharedpreference.getString(USUARIO_ID, "");
+            String idUsuario = sharedPreferences.getString(USUARIO_ID, "");
             RequestParams request = new RequestParams();
             request.add("ID_usuario", idUsuario);
             request.add("ID_habilidad", idHabilidad);
@@ -125,7 +122,7 @@ startActivity(new Intent(this, MainActivity.class));
                     try {
                         JSONObject response_necesidad = new JSONObject(new String(responseBody));
                         String necesidadId = response_necesidad.getString("ID_necesidad");
-                        SharedPreferences.Editor editor = sharedpreference.edit();
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
                         editor.putString(NECESIDAD_SELECCIONADA, necesidadId);
                         editor.commit();
                         startActivity(busqueda_necesidades);
@@ -144,7 +141,7 @@ startActivity(new Intent(this, MainActivity.class));
                 }
             });
 
-            // Finaliza metodo boton buscar necesidad
+
         }
 
     }

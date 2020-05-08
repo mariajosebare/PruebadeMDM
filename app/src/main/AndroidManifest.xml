@@ -20,10 +20,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".chat"></activity>
+        <activity android:name=".Activitymod_perfil"></activity>
+        <activity android:name=".chat" />
         <activity android:name=".selec_habilidades" />
-        <activity android:name=".main_resultadosmatch"/>
-
+        <activity android:name=".main_resultadosmatch" />
         <activity
             android:name=".perfil_usuario"
             android:label="@string/title_activity_perfil_usuario"

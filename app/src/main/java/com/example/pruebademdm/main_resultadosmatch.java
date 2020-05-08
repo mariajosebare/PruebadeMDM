@@ -1,12 +1,18 @@
 package com.example.pruebademdm;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.ScrollView;
+import android.widget.Spinner;
+import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,28 +31,25 @@ import c.e.p.util.HttpUtils;
 import cz.msebera.android.httpclient.Header;
 import es.dmoral.toasty.Toasty;
 
+import static com.example.pruebademdm.Login.MyPREFERENCES;
+import static com.example.pruebademdm.Login.NECESIDAD_SELECCIONADA;
+import static com.example.pruebademdm.Login.USUARIO_CHAT;
+
 public class main_resultadosmatch  extends AppCompatActivity {
-
-    public static final String MyPREFERENCES = "Preferencias" ;
-    public static final String USUARIO_ID = "usuario_id";
-    public static final String USUARIO_NOMBRE = "usuario_nombre";
-    public static final String USUARIO_APELLIDO = "usuario_apellido";
-    public static final String NECESIDAD_SELECCIONADA = "necesidad";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         final main_resultadosmatch pantalla = this;
-        final SharedPreferences sharedpreference = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        final SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_resultadosmatch);
-        String necesidadId = sharedpreference.getString(NECESIDAD_SELECCIONADA, "");
+        String necesidadId = sharedPreferences.getString(NECESIDAD_SELECCIONADA, "");
         HttpUtils.get("/matcheo/" + necesidadId, null, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 try {
                     JSONObject response_habilidades = new JSONObject(new String(responseBody));
-                    ScrollView scroll_layout = findViewById(R.id.scrollViewmatch);
+                    ListView resultado = findViewById(R.id.resultado);
                     List<Necesidad> necesidades = new ArrayList<Necesidad>();
                     JSONArray necesidadesJSON = response_habilidades.getJSONArray("necesidades");
                     JSONObject publicacionJSON = response_habilidades.getJSONObject("publicacion");
@@ -62,20 +65,27 @@ public class main_resultadosmatch  extends AppCompatActivity {
                         necesidad.set_nombreUsuario(usuarioJSON.getString("nombre"));
                         necesidad.set_apellidoUsuario(usuarioJSON.getString("apellido"));
                         necesidades.add(necesidad);
-                        TextView texto = new TextView(pantalla);
-                        texto.setText(necesidad.get_nombreUsuario() + "" + necesidad.get_apellidoUsuario() + "" + necesidad.get_descripcion() + "");
-                        scroll_layout.addView(texto);
-
-
+                        //TextView texto = new TextView(pantalla);
+                        //texto.setText(necesidad.get_nombreUsuario() + "" + necesidad.get_apellidoUsuario() + "" + necesidad.get_descripcion() + "");
+                        //tableLayout.addView(texto);
+                        ArrayAdapter<Necesidad> dataAdapter = new ArrayAdapter<Necesidad>(pantalla,
+                                android.R.layout.simple_list_item_1, necesidades);
+                        resultado.setAdapter(dataAdapter);
+                        resultado.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                ir_al_chat((Necesidad) parent.getItemAtPosition(position));
+                            }
+                        });
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                    //Comienza el codigo para colocar icono en el action bar
-                    getSupportActionBar().setDisplayShowHomeEnabled(true);
-                    getSupportActionBar().setIcon(R.mipmap.ic_launcher);
-                    // Finaliza codigo icono action bar
-                }
+                //Comienza el codigo para colocar icono en el action bar
+                getSupportActionBar().setDisplayShowHomeEnabled(true);
+                getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+                // Finaliza codigo icono action bar
+            }
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
@@ -93,76 +103,87 @@ public class main_resultadosmatch  extends AppCompatActivity {
         // Finaliza codigo icono action bar
     }
 
-    public void matcheo(View view) {
-
-    }
-
     // Comienza metodo boton ir_al_chat
-    public void ir_al_chat(View view) {
+    public void ir_al_chat(Necesidad necesidad) {
         Intent ir_al_chat = new Intent(this, chat.class);
+        final SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(USUARIO_CHAT, necesidad.get_idUsuario());
+        editor.commit();
         startActivity(ir_al_chat);
         // Finaliza metodo boton para ir al chat
     }
-}
-class Necesidad {
-    private String _idNecesidad;
-    private String _descripcion;
-    private String _idUsuario;
-    private String _nombreUsuario;
-    private String _apellidoUsuario;
 
-    public String get_idNecesidad() {
-        return _idNecesidad;
+    // Comienza metodo boton para regresar a la seleccion de necesidad
+    public void mis_habilidades(View view) {
+        Intent mis_habilidades = new Intent(this, main_log.class);
+        startActivity(mis_habilidades);
+        // Finaliza metodo boton para regresar a la seleccion de necesidad
     }
 
-    public void set_idNecesidad(String _idNecesidad) {
-        this._idNecesidad = _idNecesidad;
-    }
+    class Necesidad {
+        private String _idNecesidad;
+        private String _descripcion;
+        private String _idUsuario;
+        private String _nombreUsuario;
+        private String _apellidoUsuario;
 
-    public String get_descripcion() {
-        return _descripcion;
-    }
+        public String get_idNecesidad() {
+            return _idNecesidad;
+        }
 
-    public void set_descripcion(String _descripcion) {
-        this._descripcion = _descripcion;
-    }
+        public void set_idNecesidad(String _idNecesidad) {
+            this._idNecesidad = _idNecesidad;
+        }
 
-    public String get_idUsuario() {
-        return _idUsuario;
-    }
+        public String get_descripcion() {
+            return _descripcion;
+        }
 
-    public void set_idUsuario(String _idUsuario) {
-        this._idUsuario = _idUsuario;
-    }
+        public void set_descripcion(String _descripcion) {
+            this._descripcion = _descripcion;
+        }
 
-    public String get_nombreUsuario() {
-        return _nombreUsuario;
-    }
+        public String get_idUsuario() {
+            return _idUsuario;
+        }
 
-    public void set_nombreUsuario(String _nombreUsuario) {
-        this._nombreUsuario = _nombreUsuario;
-    }
+        public void set_idUsuario(String _idUsuario) {
+            this._idUsuario = _idUsuario;
+        }
 
-    public String get_apellidoUsuario() {
-        return _apellidoUsuario;
-    }
+        public String get_nombreUsuario() {
+            return _nombreUsuario;
+        }
 
-    public void set_apellidoUsuario(String _apellidoUsuario) {
-        this._apellidoUsuario = _apellidoUsuario;
-    }
+        public void set_nombreUsuario(String _nombreUsuario) {
+            this._nombreUsuario = _nombreUsuario;
+        }
+
+        public String get_apellidoUsuario() {
+            return _apellidoUsuario;
+        }
+
+        public void set_apellidoUsuario(String _apellidoUsuario) {
+            this._apellidoUsuario = _apellidoUsuario;
+        }
 
 
+        Necesidad(String idNecesidad, String descripcion, String idUsuario, String nombre, String apellido) {
+            _idNecesidad = idNecesidad;
+            _descripcion = descripcion;
+            _idUsuario = idUsuario;
+            _nombreUsuario = nombre;
+            _apellidoUsuario = apellido;
+        }
 
-    Necesidad(String idNecesidad, String descripcion, String idUsuario, String nombre, String apellido) {
-        _idNecesidad = idNecesidad;
-        _descripcion = descripcion;
-        _idUsuario = idUsuario;
-        _nombreUsuario = nombre;
-        _apellidoUsuario = apellido;
-    }
-    Necesidad()
-    {
+        Necesidad() {
 
+        }
+
+        public String toString() {
+            return _nombreUsuario + " " + _apellidoUsuario + ": " + _descripcion;
+        }
     }
 }
 
