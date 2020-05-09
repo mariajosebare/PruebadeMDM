@@ -67,9 +67,7 @@ public class main_resultadosmatch  extends AppCompatActivity {
                         necesidad.set_nombreUsuario(usuarioJSON.getString("nombre"));
                         necesidad.set_apellidoUsuario(usuarioJSON.getString("apellido"));
                         necesidades.add(necesidad);
-                        //TextView texto = new TextView(pantalla);
-                        //texto.setText(necesidad.get_nombreUsuario() + "" + necesidad.get_apellidoUsuario() + "" + necesidad.get_descripcion() + "");
-                        //tableLayout.addView(texto);
+
                         ArrayAdapter<Necesidad> dataAdapter = new ArrayAdapter<Necesidad>(pantalla,
                                 android.R.layout.simple_list_item_1, necesidades);
                         resultado.setAdapter(dataAdapter);

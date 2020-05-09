@@ -31,23 +31,23 @@ import es.dmoral.toasty.Toasty;
 
 import static com.example.pruebademdm.Login.MyPREFERENCES;
 import static com.example.pruebademdm.Login.NECESIDAD_SELECCIONADA;
+import static com.example.pruebademdm.Login.USUARIO_APELLIDO;
+import static com.example.pruebademdm.Login.USUARIO_CHAT;
 import static com.example.pruebademdm.Login.USUARIO_ID;
+import static com.example.pruebademdm.Login.USUARIO_NOMBRE;
 
-//public class main_log implements xml {
-//}   @Override
-//protected void onCreate(Bundle savedInstanceState) {
-    //super.onCreate(savedInstanceState);
-    //setContentView(R.layout.activity_main_log);
-//}
 
-    //private void setContentView(int activity_main_log) {
-    //}
-//}
     public class main_log extends AppCompatActivity {
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             final main_log pantalla = this;
+            final SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+
+            //final String user_name = ((EditText) findViewById(R.id.Nombre)).getText().toString();
+            //final String _apellido = ((EditText) findViewById(R.id.Apellido)).getText().toString();
+
+
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main_log);
             HttpUtils.get("/habilidades", null, new AsyncHttpResponseHandler() {
