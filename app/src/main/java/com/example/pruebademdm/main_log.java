@@ -105,6 +105,8 @@ startActivity(new Intent(this, MainActivity.class));
             return super.onOptionsItemSelected(item);
         }
 
+        //FINALIZA ACTION BAR
+
         // Comienza metodo boton buscar necesidad
         public void busqueda_necesidades (View view) {
             final Intent busqueda_necesidades = new Intent(this, main_resultadosmatch.class);
