@@ -2,6 +2,7 @@ package com.example.pruebademdm;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -196,7 +197,6 @@ public class chat extends AppCompatActivity {
         public TextView name;
         public TextView messageBody;
     }
-}
 
     //ACTION BAR
     public boolean onCreateOptionsMenu(Menu menu){
@@ -209,13 +209,13 @@ public class chat extends AppCompatActivity {
 
         if(id == R.id.modificar){
             Toast.makeText(this, "Editar perfil", Toast.LENGTH_SHORT).show();
-startActivity(new Intent(this, selec_habilidades.class));
+            startActivity(new Intent(this, selec_habilidades.class));
         } else if(id == R.id.ir_chat){
             Toast.makeText(this, "Chat", Toast.LENGTH_SHORT).show();
-startActivity(new Intent(this, chat.class));
+            startActivity(new Intent(this, chat.class));
         } else if(id == R.id.salir){
             Toast.makeText(this, "Cerrar sesión", Toast.LENGTH_SHORT).show();
-startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, MainActivity.class));
         }
         return super.onOptionsItemSelected(item);
     }
