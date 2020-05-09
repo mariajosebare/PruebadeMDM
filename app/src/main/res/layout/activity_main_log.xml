@@ -12,38 +12,20 @@
         android:background="#F8F7F5"
         android:contentDescription="@string/categorias">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#FFCE0A"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="147dp"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="411dp"
-            android:layout_marginRight="411dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintGuide_begin="692dp"
-            app:layout_constraintStart_toStartOf="parent" />
-
         <TextView
             android:id="@+id/user_name"
-            android:layout_width="138dp"
-            android:layout_height="53dp"
+            android:layout_width="214dp"
+            android:layout_height="45dp"
             android:contentDescription="@string/user_name"
+            android:gravity="center"
+            android:hint="Nombre"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.743"
+            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.349" />
+            app:layout_constraintVertical_bias="0.137" />
 
         <Button
             android:id="@+id/busquedanece"
@@ -64,17 +46,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline"
-            app:layout_constraintVertical_bias="0.837"
             tools:text="@string/button" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/escribir_necesidad"
-            android:layout_width="257dp"
-            android:layout_height="85dp"
+            android:layout_width="262dp"
+            android:layout_height="115dp"
+            android:layout_marginBottom="348dp"
             android:contentDescription="@string/necesidad"
             android:gravity="start|top"
-            android:hint="Hola Maria Perez, ¿qué necesitas?"
+            android:hint="Realiza aqui tu publicacion "
             android:orientation="horizontal"
             android:textAllCaps="false"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
@@ -83,25 +64,54 @@
             android:typeface="sans"
             android:verticalScrollbarPosition="left"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.545"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline"
-            app:layout_constraintVertical_bias="0.334" />
+            tools:layout_editor_absoluteX="97dp" />
 
         <Spinner
             android:id="@+id/categorias"
             android:layout_width="259dp"
             android:layout_height="57dp"
+            android:layout_marginBottom="272dp"
             android:spinnerMode="dropdown"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.552"
+            app:layout_constraintHorizontal_bias="0.657"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline"
-            app:layout_constraintVertical_bias="0.499"
             tools:visibility="visible" />
+
+        <TextView
+            android:layout_width="213dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="Hola"
+            android:textAllCaps="false"
+            android:textColor="#EA0E0E0E"
+            android:textIsSelectable="true"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="100dp"
+            tools:layout_editor_absoluteY="30dp" />
+
+        <TextView
+            android:id="@+id/_apellido"
+            android:layout_width="211dp"
+            android:layout_height="44dp"
+            android:gravity="center"
+            android:hint="Apellido"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="97dp"
+            tools:layout_editor_absoluteY="149dp" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="210dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="Como estas? "
+            android:textColor="#100F0F"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="97dp"
+            tools:layout_editor_absoluteY="205dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

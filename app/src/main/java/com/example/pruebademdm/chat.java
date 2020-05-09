@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.service.autofill.UserData;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -17,6 +19,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -193,6 +196,31 @@ public class chat extends AppCompatActivity {
         public TextView name;
         public TextView messageBody;
     }
+}
+
+    //ACTION BAR
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.action_bar, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+
+        if(id == R.id.modificar){
+            Toast.makeText(this, "Editar perfil", Toast.LENGTH_SHORT).show();
+startActivity(new Intent(this, selec_habilidades.class));
+        } else if(id == R.id.ir_chat){
+            Toast.makeText(this, "Chat", Toast.LENGTH_SHORT).show();
+startActivity(new Intent(this, chat.class));
+        } else if(id == R.id.salir){
+            Toast.makeText(this, "Cerrar sesión", Toast.LENGTH_SHORT).show();
+startActivity(new Intent(this, MainActivity.class));
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    //FINALIZA ACTION BAR
 }
 
 

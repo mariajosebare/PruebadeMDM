@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -66,9 +68,7 @@ public class main_resultadosmatch  extends AppCompatActivity {
                         necesidad.set_nombreUsuario(usuarioJSON.getString("nombre"));
                         necesidad.set_apellidoUsuario(usuarioJSON.getString("apellido"));
                         necesidades.add(necesidad);
-                        //TextView texto = new TextView(pantalla);
-                        //texto.setText(necesidad.get_nombreUsuario() + "" + necesidad.get_apellidoUsuario() + "" + necesidad.get_descripcion() + "");
-                        //tableLayout.addView(texto);
+
                         ArrayAdapter<Necesidad> dataAdapter = new ArrayAdapter<Necesidad>(pantalla,
                                 android.R.layout.simple_list_item_1, necesidades);
                         resultado.setAdapter(dataAdapter);
@@ -187,6 +187,29 @@ public class main_resultadosmatch  extends AppCompatActivity {
             return _nombreUsuario + " " + _apellidoUsuario + ": " + _descripcion;
         }
     }
+
+    //ACTION BAR
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.action_bar, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+
+        if(id == R.id.modificar){
+            Toast.makeText(this, "Editar perfil", Toast.LENGTH_SHORT).show();
+startActivity(new Intent(this, selec_habilidades.class));
+        } else if(id == R.id.ir_chat){
+startActivity(new Intent(this, chat.class));
+        } else if(id == R.id.salir){
+            Toast.makeText(this, "Cerrar sesión", Toast.LENGTH_SHORT).show();
+startActivity(new Intent(this, MainActivity.class));
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    //FINALIZA ACTION BAR
 }
 
 
