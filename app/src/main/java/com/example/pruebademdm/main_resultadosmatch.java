@@ -34,6 +34,7 @@ import es.dmoral.toasty.Toasty;
 import static com.example.pruebademdm.Login.MyPREFERENCES;
 import static com.example.pruebademdm.Login.NECESIDAD_SELECCIONADA;
 import static com.example.pruebademdm.Login.USUARIO_CHAT;
+import static com.example.pruebademdm.Login.USUARIO_CHAT_NOMBRE;
 
 public class main_resultadosmatch  extends AppCompatActivity {
 
@@ -109,6 +110,7 @@ public class main_resultadosmatch  extends AppCompatActivity {
         final SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(USUARIO_CHAT, necesidad.get_idUsuario());
+        editor.putString(USUARIO_CHAT_NOMBRE, necesidad.get_nombreUsuario());
         editor.commit();
         startActivity(ir_al_chat);
         // Finaliza metodo boton para ir al chat

@@ -1,48 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:paddingVertical="10dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="60dp"
+    android:clipToPadding="false">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/name"
+        android:layout_marginLeft="15dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:clipToPadding="false"
-        android:paddingVertical="10dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="60dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        android:paddingStart="15dp"
-        android:paddingEnd="60dp">
+        android:paddingBottom="4dp"
+        android:text="Rose"/>
 
-        <TextView
-            android:id="@+id/Usuario"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="100dp"
-            android:paddingBottom="4dp"
-            android:text="@string/user_name"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/boxMensaje"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/Usuario"
-            android:layout_alignStart="@+id/Usuario"
-            android:layout_alignLeft="@+id/Usuario"
-            android:background="@drawable/their_message"
-            android:elevation="2dp"
-            android:paddingHorizontal="16dp"
-            android:paddingVertical="12dp"
-            android:text="Mensaje"
-            android:textSize="24sp"
-            app:drawableTint="#42D1E3" />
-    </RelativeLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/message_body"
+        android:layout_below="@+id/name"
+        android:layout_alignLeft="@+id/name"
+        android:background="@drawable/their_message"
+        android:paddingVertical="12dp"
+        android:paddingHorizontal="16dp"
+        android:elevation="2dp"
+        android:textSize="18dp"
+        android:text="How are you doing? This is a long message that should probably wrap."
+        />
+</RelativeLayout>

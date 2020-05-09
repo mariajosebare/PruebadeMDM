@@ -1,36 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:paddingVertical="10dp"
+    android:paddingRight="15dp"
+    android:paddingLeft="60dp"
+    android:clipToPadding="false">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:clipToPadding="false"
-        android:paddingVertical="10dp"
-        android:paddingLeft="60dp"
-        android:paddingRight="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.005"
-        android:paddingStart="60dp"
-        android:paddingEnd="15dp">
+        android:id="@+id/message_body"
+        android:background="@drawable/my_message"
+        android:textColor="#000"
+        android:padding="10dp"
+        android:elevation="2dp"
+        android:textSize="18dp"
+        android:layout_alignParentRight="true"
+        android:text="Placeholder message"
+        />
 
-        <TextView
-            android:id="@+id/boxMensaje"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:background="@drawable/my_message"
-            android:elevation="2dp"
-            android:padding="10dp"
-            android:text="Mensaje"
-            android:textColor="#fff"
-            android:textSize="18sp"
-            android:layout_alignParentEnd="true" />
-
-    </RelativeLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

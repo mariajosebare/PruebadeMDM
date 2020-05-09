@@ -28,6 +28,7 @@ public class Login extends AppCompatActivity {
     public static final String USUARIO_APELLIDO = "usuario_apellido";
     public static final String NECESIDAD_SELECCIONADA = "necesidad";
     public static final String USUARIO_CHAT = "usuario_chat";
+    public static final String USUARIO_CHAT_NOMBRE = "usuario_chat_nombre";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
