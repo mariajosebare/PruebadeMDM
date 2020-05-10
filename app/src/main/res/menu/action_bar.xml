@@ -5,7 +5,7 @@
 
     <item
         android:id="@+id/modificar"
-        android:icon="@drawable/ic_action_person"
+        android:icon="@drawable/ic_action_person2"
         android:orderInCategory="101"
         android:title="Editar perfil"
         app:showAsAction="always" />
