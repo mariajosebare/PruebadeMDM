@@ -51,12 +51,12 @@
             android:id="@+id/escribir_necesidad"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginBottom="19dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
+            android:layout_marginBottom="19dp"
             android:contentDescription="@string/necesidad"
             android:gravity="start|top"
-            android:hint="Realiza aqui tu publicacion "
+            android:hint="Realiza aquí tu publicación "
             android:orientation="horizontal"
             android:textAllCaps="false"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
@@ -64,11 +64,11 @@
             android:textSize="24sp"
             android:typeface="sans"
             android:verticalScrollbarPosition="left"
-            app:layout_constraintTop_toBottomOf="@+id/bienvenida"
+            app:layout_constraintBottom_toTopOf="@id/categorias"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/categorias"/>
+            app:layout_constraintTop_toBottomOf="@+id/bienvenida" />
 
         <Spinner
             android:id="@+id/categorias"
@@ -120,13 +120,13 @@
             android:layout_height="50dp"
             android:layout_marginTop="5dp"
             android:gravity="center"
-            android:text="Como estas? "
+            android:text="¿Cómo estás? "
             android:textColor="#100F0F"
             android:textSize="24sp"
-            app:layout_constraintTop_toBottomOf="@+id/_apellido"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/_apellido" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

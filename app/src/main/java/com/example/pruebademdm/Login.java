@@ -34,7 +34,13 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        //Comienza el codigo para colocar icono en el action bar
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+        // Finaliza codigo icono action bar
     }
+
 
     public void login(View view) {
         final Intent login = new Intent(this, main_log.class);

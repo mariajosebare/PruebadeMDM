@@ -16,7 +16,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="MDM"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -27,7 +27,7 @@
         <activity android:name=".main_resultadosmatch" />
         <activity
             android:name=".perfil_usuario"
-            android:label="@string/title_activity_perfil_usuario"
+            android:label="MDM"
             android:theme="@style/AppTheme.NoActionBar" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -43,14 +43,14 @@
 
         <activity
             android:name=".MapsActivity"
-            android:label="@string/title_activity_maps" />
+            android:label="MDM" />
         <activity
             android:name=".Login"
-            android:label="activity_login"
+            android:label="MDM"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".main_log"
-            android:label="@string/title_activity_login" />
+            android:label="MDM" />
         <activity android:name=".creaciondeusuario" />
         <activity
             android:name=".MainActivity"
