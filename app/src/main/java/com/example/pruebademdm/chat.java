@@ -128,6 +128,7 @@ public class chat extends AppCompatActivity {
                                 }
                                 ListView lista = findViewById(R.id.listaMensaje);
                                 ((ArrayAdapter<Mensaje>) lista.getAdapter()).notifyDataSetChanged();
+                                lista.setSelection(lista.getCount() - 1);
                             }
                             catch (JSONException e){
                                 e.printStackTrace();

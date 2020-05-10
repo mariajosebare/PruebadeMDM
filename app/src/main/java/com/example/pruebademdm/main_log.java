@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +22,7 @@ import com.loopj.android.http.RequestParams;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,13 +45,16 @@ import static com.example.pruebademdm.Login.USUARIO_NOMBRE;
         protected void onCreate(Bundle savedInstanceState) {
             final main_log pantalla = this;
             final SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
-
-            //final String user_name = ((EditText) findViewById(R.id.Nombre)).getText().toString();
-            //final String _apellido = ((EditText) findViewById(R.id.Apellido)).getText().toString();
-
-
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main_log);
+
+            String nombre_usuario  = sharedPreferences.getString(USUARIO_NOMBRE, "");
+            String apellido_usuario = sharedPreferences.getString(USUARIO_APELLIDO, "");
+            TextView texto_nombre = findViewById(R.id.user_name);
+            TextView texto_apellido = findViewById(R.id._apellido);
+            texto_nombre.setText(nombre_usuario);
+            texto_apellido.setText(apellido_usuario);
+
             HttpUtils.get("/habilidades", null, new AsyncHttpResponseHandler() {
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {

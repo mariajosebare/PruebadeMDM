@@ -3,6 +3,7 @@ package com.example.pruebademdm;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -30,6 +31,9 @@ import java.util.List;
 
 import c.e.p.util.HttpUtils;
 import cz.msebera.android.httpclient.Header;
+
+import static com.example.pruebademdm.Login.MyPREFERENCES;
+import static com.example.pruebademdm.Login.USUARIO_ID;
 
 public class selec_habilidades extends AppCompatActivity {
     List<Habilidad> habilidades = new ArrayList<Habilidad>();
@@ -99,6 +103,7 @@ public class selec_habilidades extends AppCompatActivity {
     // Comienza metodo boton crear usuario para ir a main_log
     public void mis_habilidades(View view) {
         final Intent mis_habilidades = new Intent(this, main_log.class);
+        final SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         List<String> idHabilidades = new ArrayList<String>();
 
         for (Habilidad habilidad:habilidades){
@@ -109,7 +114,8 @@ public class selec_habilidades extends AppCompatActivity {
 
         RequestParams request = new RequestParams();
         request.add("habilidades", TextUtils.join(",",idHabilidades));
-        HttpUtils.put("/usuario/1/habilidades", request, new AsyncHttpResponseHandler() {
+        String idUsuario = sharedPreferences.getString(USUARIO_ID,"");
+        HttpUtils.put("/usuario/" + idUsuario + "/habilidades", request, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 startActivity(mis_habilidades);

@@ -1,6 +1,8 @@
 package com.example.pruebademdm;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -10,8 +12,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import c.e.p.util.HttpUtils;
 import cz.msebera.android.httpclient.Header;
+
+import static com.example.pruebademdm.Login.MyPREFERENCES;
+import static com.example.pruebademdm.Login.USUARIO_APELLIDO;
+import static com.example.pruebademdm.Login.USUARIO_ID;
+import static com.example.pruebademdm.Login.USUARIO_NOMBRE;
+
 
 public class creaciondeusuario extends AppCompatActivity {
 
@@ -29,6 +40,7 @@ public class creaciondeusuario extends AppCompatActivity {
     // Comienza metodo boton crear usuario para ir a seleccion de habilidades
     public void validarusuario(View view) {
         final Intent validarusuario = new Intent(this, selec_habilidades.class);
+        final SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         String Nombre = ((EditText) findViewById(R.id.Nombre)).getText().toString();
         String Apellido = ((EditText) findViewById(R.id.Apellido)).getText().toString();
         String Telefono = ((EditText) findViewById(R.id.Telefono)).getText().toString();
@@ -52,7 +64,20 @@ public class creaciondeusuario extends AppCompatActivity {
         HttpUtils.put("/usuarios", request, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                startActivity(validarusuario);
+                try {
+                    JSONObject usuarioJSON = new JSONObject(new String(responseBody));
+                    String idUsuario = usuarioJSON.getString("ID_usuario");
+                    String nombreUsuario= usuarioJSON.getString("nombre");
+                    String apellidoUsuario = usuarioJSON.getString("apellido");
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString(USUARIO_ID,idUsuario);
+                    editor.putString(USUARIO_NOMBRE, nombreUsuario);
+                    editor.putString(USUARIO_APELLIDO, apellidoUsuario);
+                    editor.commit();
+                    startActivity(validarusuario);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
 
             @Override
