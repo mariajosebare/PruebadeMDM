@@ -18,9 +18,12 @@
         android:layout_marginBottom="375dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/anacasalas" />
+
 
     <TextView
         android:id="@+id/textView6"
@@ -35,11 +38,13 @@
         android:text="Selección de habilidades"
         android:textColor="#000000"
         android:textSize="18sp"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.082" />
 
     <Button
         android:id="@+id/mis_habilidades"
@@ -51,15 +56,18 @@
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:layout_marginBottom="31dp"
-        android:background="#FFBE0A"
+        android:background="#E65252"
         android:onClick="mis_habilidades"
         android:text="Confirmar"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.254"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.534" />
 
-   <ListView
+    <ListView
        android:id="@+id/habilidades"
        android:layout_width="0dp"
        android:layout_height="0dp"
