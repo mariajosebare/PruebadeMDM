@@ -2,22 +2,33 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+
+
     <item
         android:id="@+id/modificar"
         android:icon="@drawable/ic_action_person"
-        android:orderInCategory="100"
+        android:orderInCategory="101"
         android:title="Editar perfil"
         app:showAsAction="always" />
     <item
         android:id="@+id/ir_chat"
         android:icon="@drawable/ic_action_chat"
-        android:orderInCategory="100"
+        android:orderInCategory="101"
         android:title="Chat"
         app:showAsAction="always" />
+
+    <item
+        android:id="@+id/notif"
+        android:icon="@drawable/ic_action_notif"
+        android:orderInCategory="101"
+        android:title="Notificaciones"
+        app:showAsAction="always" />
+
     <item
         android:id="@+id/salir"
         android:icon="@drawable/ic_action_salir"
-        android:orderInCategory="100"
+        android:orderInCategory="101"
         android:title="Cerrar sesión"
         app:showAsAction="always" />
+
 </menu>

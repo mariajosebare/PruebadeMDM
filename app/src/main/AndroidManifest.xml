@@ -20,7 +20,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activitymod_perfil"></activity>
+        <activity android:name=".Notificaciones"></activity>
+        <activity android:name=".Activitymod_perfil" />
         <activity android:name=".chat" />
         <activity android:name=".selec_habilidades" />
         <activity android:name=".main_resultadosmatch" />

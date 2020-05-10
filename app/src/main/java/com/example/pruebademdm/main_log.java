@@ -102,6 +102,11 @@ startActivity(new Intent(this, chat.class));
                 Toast.makeText(this, "Cerrar sesión", Toast.LENGTH_SHORT).show();
 startActivity(new Intent(this, MainActivity.class));
             }
+            else if(id == R.id.notif){
+                Toast.makeText(this, "Notificaciones", Toast.LENGTH_SHORT).show();
+startActivity(new Intent(this, Notificaciones.class));
+            }
+
             return super.onOptionsItemSelected(item);
         }
 
