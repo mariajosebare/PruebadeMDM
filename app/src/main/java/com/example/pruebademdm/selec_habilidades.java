@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -86,7 +88,6 @@ public class selec_habilidades extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
             }
 
             @Override
@@ -97,8 +98,29 @@ public class selec_habilidades extends AppCompatActivity {
     }
     // Comienza metodo boton crear usuario para ir a main_log
     public void mis_habilidades(View view) {
-        Intent mis_habilidades = new Intent(this, main_log.class);
-        startActivity(mis_habilidades);
+        final Intent mis_habilidades = new Intent(this, main_log.class);
+        List<String> idHabilidades = new ArrayList<String>();
+
+        for (Habilidad habilidad:habilidades){
+            if(habilidad.get_seleccionado()) {
+                idHabilidades.add(habilidad.get_id());
+            }
+        }
+
+        RequestParams request = new RequestParams();
+        request.add("habilidades", TextUtils.join(",",idHabilidades));
+        HttpUtils.put("/usuario/1/habilidades", request, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                startActivity(mis_habilidades);
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+            }
+        });
+
         // Finaliza metodo boton crear usuario para ir a perfil de usuario
     }
 
