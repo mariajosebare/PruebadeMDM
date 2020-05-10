@@ -151,23 +151,24 @@ startActivity(new Intent(this, Notificaciones.class));
 
         }
 
+        class Habilidad {
+            String _id;
+            String _nombre;
+
+            Habilidad (String id, String nombre) {
+                _id = id;
+                _nombre = nombre;
+            }
+
+            public String getId(){
+                return _id;
+            }
+
+            public String toString(){
+                return _nombre;
+            }
+        }
     }
 
-    class Habilidad {
-        String _id;
-        String _nombre;
 
-        Habilidad (String id, String nombre) {
-            _id = id;
-            _nombre = nombre;
-        }
-
-        public String getId(){
-            return _id;
-        }
-
-        public String toString(){
-           return _nombre;
-        }
-    }
 
