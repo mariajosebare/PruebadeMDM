@@ -14,7 +14,7 @@
         android:icon="@drawable/ic_action_chat"
         android:orderInCategory="101"
         android:title="Chat"
-        app:showAsAction="always" />
+        app:showAsAction="never" />
 
     <item
         android:id="@+id/notif"
@@ -22,6 +22,21 @@
         android:orderInCategory="101"
         android:title="Notificaciones"
         app:showAsAction="always" />
+
+    <item
+        android:id="@+id/habil"
+        android:icon="@drawable/ic_action_habi"
+        android:orderInCategory="101"
+        android:title="Mis habilidades"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/publi"
+        android:icon="@drawable/ic_action_public"
+        android:orderInCategory="101"
+        android:title="Mis publicaciones"
+        app:showAsAction="never" />
+
 
     <item
         android:id="@+id/salir"

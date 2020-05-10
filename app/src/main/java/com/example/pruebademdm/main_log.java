@@ -99,17 +99,22 @@ import static com.example.pruebademdm.Login.USUARIO_NOMBRE;
 
             if(id == R.id.modificar){
                 Toast.makeText(this, "Editar perfil", Toast.LENGTH_SHORT).show();
-startActivity(new Intent(this, selec_habilidades.class));
+startActivity(new Intent(this, Activitymod_perfil.class));
             } else if(id == R.id.ir_chat){
                 Toast.makeText(this, "Chat", Toast.LENGTH_SHORT).show();
 startActivity(new Intent(this, chat.class));
             } else if(id == R.id.salir){
                 Toast.makeText(this, "Cerrar sesión", Toast.LENGTH_SHORT).show();
 startActivity(new Intent(this, MainActivity.class));
-            }
-            else if(id == R.id.notif){
+            } else if(id == R.id.notif){
                 Toast.makeText(this, "Notificaciones", Toast.LENGTH_SHORT).show();
 startActivity(new Intent(this, Notificaciones.class));
+            } else if(id == R.id.publi){
+                Toast.makeText(this, "Mis publicaciones", Toast.LENGTH_SHORT).show();
+startActivity(new Intent(this, Mis_publicaciones.class));
+            } else if(id == R.id.habil){
+                Toast.makeText(this, "Mis habilidades", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, selec_habilidades.class));
             }
 
             return super.onOptionsItemSelected(item);
