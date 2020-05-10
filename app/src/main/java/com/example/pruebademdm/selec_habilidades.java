@@ -7,8 +7,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -29,18 +31,19 @@ import cz.msebera.android.httpclient.Header;
 
 public class selec_habilidades extends AppCompatActivity {
     List<Habilidad> habilidades = new ArrayList<Habilidad>();
+    ListView listaHabilidades;
     Context context = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selec_habilidades);
+        listaHabilidades = findViewById(R.id.habilidades);
         HttpUtils.get("/habilidades", null, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 try {
                     JSONArray response_habilidades=new JSONArray(new String(responseBody));
-                    ListView listaHabilidades = findViewById(R.id.habilidades);
                     for (int i = 0; i < response_habilidades.length(); i++) {
                         JSONObject habilidad = response_habilidades.getJSONObject(i);
                         habilidades.add(new Habilidad(habilidad.getString("ID_habilidad"),habilidad.getString("nombre"), false));
@@ -56,10 +59,25 @@ public class selec_habilidades extends AppCompatActivity {
                             CheckBox checkBoxHabilidad = convertView.findViewById(R.id.checkBox_habilidad);
                             nombreHabilidad.setText(habilidad.get_nombre());
                             checkBoxHabilidad.setChecked(habilidad.get_seleccionado());
+                            checkBoxHabilidad.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                                @Override
+                                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                                    Integer position = listaHabilidades.getPositionForView(buttonView);
+                                    Habilidad habilidad = habilidades.get(position);
+                                    habilidad.set_seleccionado(isChecked);
+                                }
+                            });
                             return convertView;
                         }
                     };
                     listaHabilidades.setAdapter(dataAdapter);
+                    listaHabilidades.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            CheckBox checkBox = view.findViewById(R.id.checkBox_habilidad);
+                            checkBox.setChecked(!checkBox.isChecked());
+                        }
+                    });
 
                     //Comienza el codigo para colocar icono en el action bar
                     getSupportActionBar().setDisplayShowHomeEnabled(true);
