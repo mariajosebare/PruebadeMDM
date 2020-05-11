@@ -29,6 +29,9 @@ public class Login extends AppCompatActivity {
     public static final String NECESIDAD_SELECCIONADA = "necesidad";
     public static final String USUARIO_CHAT = "usuario_chat";
     public static final String USUARIO_CHAT_NOMBRE = "usuario_chat_nombre";
+    public static final String CORREO_USUARIO = "email";
+    public static final String CONTRASEÑA_CORREO = "password";
+    public static final String TELEFONO = "telefono";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,9 +65,18 @@ public class Login extends AppCompatActivity {
                         String idUsuario = usuario.getString("ID_usuario");
                         String nombreUsuario= usuario.getString("nombre");
                         String apellidoUsuario = usuario.getString("apellido");
+                        String correoUsuario = usuario.getString("email");
+                        String password = usuario.getString("password");
+                        String telefono = usuario.getString("telefono");
+
                         editor.putString(USUARIO_ID,idUsuario);
                         editor.putString(USUARIO_NOMBRE, nombreUsuario);
                         editor.putString(USUARIO_APELLIDO, apellidoUsuario);
+                        editor.putString(CORREO_USUARIO,correoUsuario);
+                        editor.putString(CONTRASEÑA_CORREO,password);
+                        editor.putString(TELEFONO,telefono);
+
+
                         editor.commit();
                         startActivity(login);
                     } else {

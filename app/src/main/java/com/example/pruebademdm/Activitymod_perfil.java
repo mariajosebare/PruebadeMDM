@@ -2,11 +2,43 @@ package com.example.pruebademdm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import c.e.p.util.HttpUtils;
+import cz.msebera.android.httpclient.Header;
+
+import static com.example.pruebademdm.Login.MyPREFERENCES;
+import static com.example.pruebademdm.Login.USUARIO_APELLIDO;
+import static com.example.pruebademdm.Login.USUARIO_ID;
+import static com.example.pruebademdm.Login.USUARIO_NOMBRE;
+import static com.example.pruebademdm.Login.CORREO_USUARIO;
+import static com.example.pruebademdm.Login.CONTRASEÑA_CORREO;
+import static com.example.pruebademdm.Login.TELEFONO;
+
+
+
 
 public class Activitymod_perfil extends AppCompatActivity {
 
@@ -14,12 +46,56 @@ public class Activitymod_perfil extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activitymod_perfil);
+        // Se procede a realizar el el llamado de  datos del usuario para la implementacion del cambio de contrasena
+        final SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        EditText correControl = findViewById(R.id.editText);
+        String correoActual = sharedPreferences.getString(CORREO_USUARIO, "");
+        correControl.setText(correoActual);
+        //Finaliza metodo llamado de datos para cambios de contrasena
 
         //Comienza el codigo para colocar icono en el action bar
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
         // Finaliza codigo icono action bar
     }
+
+
+    public void modificarUsuario(View view) {
+        final Intent modificarUsuario = new Intent(this, perfil_usuario.class);
+        final SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        //String new_telefono = ((EditText) findViewById(R.id.Telefono)).getText().toString();
+        //String new_password = ((EditText) findViewById(R.id.newPass)).getText().toString();
+        RequestParams request = new RequestParams();
+        //request.add("telefono", new_telefono);
+        //request.add("password", new_password);
+
+
+        HttpUtils.put("/usuarios", request, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                try {
+                    JSONObject usuarioJSON = new JSONObject(new String(responseBody));
+                    String password = usuarioJSON.getString("password");
+                    String telefono= usuarioJSON.getString("telefono");
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString(CONTRASEÑA_CORREO,password);
+                    editor.putString(TELEFONO, telefono);
+                    editor.commit();
+                    startActivity(modificarUsuario);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                error.printStackTrace();
+            }
+        });
+    }
+
+
+
 
 
     //ACTION BAR

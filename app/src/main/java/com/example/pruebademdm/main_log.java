@@ -47,7 +47,6 @@ import static com.example.pruebademdm.Login.USUARIO_NOMBRE;
             final SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main_log);
-
             String nombre_usuario  = sharedPreferences.getString(USUARIO_NOMBRE, "");
             String apellido_usuario = sharedPreferences.getString(USUARIO_APELLIDO, "");
             TextView texto_nombre = findViewById(R.id.user_name);

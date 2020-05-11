@@ -24,14 +24,10 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.069" />
 
-    <ListView
-        android:id="@+id/mis_public"
-        android:layout_width="396dp"
-        android:layout_height="573dp"
-        android:layout_marginTop="46dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/save_pub"
-        app:layout_constraintVertical_bias="0.431" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="409dp"
+        android:layout_height="630dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="100dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
