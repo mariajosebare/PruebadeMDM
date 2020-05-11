@@ -16,7 +16,7 @@
         android:layout_marginBottom="20dp"
         android:clickable="true"
         android:onClick="ir_al_chat"
-        app:backgroundTint="#FFCE3B"
+        app:backgroundTint="#E65252"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/chat" />
