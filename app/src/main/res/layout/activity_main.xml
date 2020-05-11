@@ -56,6 +56,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/me_doy_maña" />
+        app:srcCompat="@drawable/medoymaña" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
