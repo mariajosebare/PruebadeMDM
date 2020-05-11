@@ -56,6 +56,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/medoymaña" />
+        app:srcCompat="@drawable/medoymanarosa" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
