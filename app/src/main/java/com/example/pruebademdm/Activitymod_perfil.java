@@ -63,23 +63,24 @@ public class Activitymod_perfil extends AppCompatActivity {
     public void modificarUsuario(View view) {
         final Intent modificarUsuario = new Intent(this, perfil_usuario.class);
         final SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
-        //String new_telefono = ((EditText) findViewById(R.id.Telefono)).getText().toString();
-        //String new_password = ((EditText) findViewById(R.id.newPass)).getText().toString();
+        final String new_password = ((EditText) findViewById(R.id.newPass)).getText().toString();
         RequestParams request = new RequestParams();
-        //request.add("telefono", new_telefono);
         //request.add("password", new_password);
 
 
-        HttpUtils.put("/usuarios", request, new AsyncHttpResponseHandler() {
+        HttpUtils.put("/modificar_perfil", request, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 try {
                     JSONObject usuarioJSON = new JSONObject(new String(responseBody));
                     String password = usuarioJSON.getString("password");
-                    String telefono= usuarioJSON.getString("telefono");
+                    RequestParams request = new RequestParams();
+                    request.add("newPass", new_password);
+                    request.add("editText3", new_password);
+
+
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString(CONTRASEÑA_CORREO,password);
-                    editor.putString(TELEFONO, telefono);
                     editor.commit();
                     startActivity(modificarUsuario);
                 } catch (JSONException e) {
