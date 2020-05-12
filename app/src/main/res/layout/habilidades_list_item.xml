@@ -2,17 +2,18 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:descendantFocusability="blocksDescendants">
+
     <TextView
         android:id="@+id/nombre_habilidad"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_alignLeft="@+id/checkBox_habilidad"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:paddingLeft="35dp"
         android:text="Habilidad 1"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:paddingLeft="35dp"
-        android:textColor="@android:color/black"
-        android:focusable="false"
-        android:focusableInTouchMode="false"/>
+        android:textColor="#000000" />
     <CheckBox
         android:id="@+id/checkBox_habilidad"
         android:layout_width="wrap_content"
