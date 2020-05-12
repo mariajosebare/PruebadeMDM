@@ -65,18 +65,31 @@ public class Activitymod_perfil extends AppCompatActivity {
         final SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         final String new_password = ((EditText) findViewById(R.id.newPass)).getText().toString();
         RequestParams request = new RequestParams();
-        //request.add("password", new_password);
+        //String ci = ((EditText) findViewById(R.id.textci)).getText().toString();
+        //String nombre = ((EditText) findViewById(R.id.textci)).getText().toString();
 
 
-        HttpUtils.put("/modificar_perfil", request, new AsyncHttpResponseHandler() {
+
+
+
+        //request.add("ci", ci);
+        //request.add("nombre", nombre);
+
+
+
+
+
+        String usuarioId = sharedPreferences.getString(USUARIO_ID, "");
+        HttpUtils.post("/usuario/" + usuarioId, request, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 try {
                     JSONObject usuarioJSON = new JSONObject(new String(responseBody));
                     String password = usuarioJSON.getString("password");
-                    RequestParams request = new RequestParams();
-                    request.add("newPass", new_password);
-                    request.add("editText3", new_password);
+
+
+
+
 
 
                     SharedPreferences.Editor editor = sharedPreferences.edit();
