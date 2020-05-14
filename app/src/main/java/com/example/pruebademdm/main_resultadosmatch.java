@@ -38,7 +38,7 @@ import static com.example.pruebademdm.Login.NECESIDAD_SELECCIONADA;
 import static com.example.pruebademdm.Login.USUARIO_CHAT;
 import static com.example.pruebademdm.Login.USUARIO_CHAT_NOMBRE;
 
-public class main_resultadosmatch  extends AppCompatActivity {
+public class main_resultadosmatch extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -186,22 +186,22 @@ public class main_resultadosmatch  extends AppCompatActivity {
     }
 
     //ACTION BAR
-    public boolean onCreateOptionsMenu(Menu menu){
+    public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.action_bar, menu);
         return true;
     }
 
-    public boolean onOptionsItemSelected(MenuItem item){
+    public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if(id == R.id.modificar){
+        if (id == R.id.modificar) {
             Toast.makeText(this, "Editar perfil", Toast.LENGTH_SHORT).show();
-startActivity(new Intent(this, selec_habilidades.class));
-        } else if(id == R.id.ir_chat){
-startActivity(new Intent(this, chat.class));
-        } else if(id == R.id.salir){
+            startActivity(new Intent(this, selec_habilidades.class));
+        } else if (id == R.id.ir_chat) {
+            startActivity(new Intent(this, chat.class));
+        } else if (id == R.id.salir) {
             Toast.makeText(this, "Cerrar sesión", Toast.LENGTH_SHORT).show();
-startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, MainActivity.class));
         }
         return super.onOptionsItemSelected(item);
     }

@@ -37,15 +37,14 @@ public class Notificaciones extends AppCompatActivity {
                 notificacion.setContentText("Mensaje");
 
 
-                Intent intent  = new Intent(Notificaciones.this,chat.class);
+                Intent intent = new Intent(Notificaciones.this, chat.class);
 
-                PendingIntent pendingIntent = PendingIntent.getActivity(Notificaciones.this,0,intent,PendingIntent.FLAG_UPDATE_CURRENT);
+                PendingIntent pendingIntent = PendingIntent.getActivity(Notificaciones.this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
                 notificacion.setContentIntent(pendingIntent);
 
 
-
                 NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-                nm.notify(idUnica,notificacion.build());
+                nm.notify(idUnica, notificacion.build());
             }
         });
     }

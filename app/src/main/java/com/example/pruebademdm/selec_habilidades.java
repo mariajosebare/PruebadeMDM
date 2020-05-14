@@ -49,15 +49,15 @@ public class selec_habilidades extends AppCompatActivity {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 try {
-                    JSONArray response_habilidades=new JSONArray(new String(responseBody));
+                    JSONArray response_habilidades = new JSONArray(new String(responseBody));
                     for (int i = 0; i < response_habilidades.length(); i++) {
                         JSONObject habilidad = response_habilidades.getJSONObject(i);
-                        habilidades.add(new Habilidad(habilidad.getString("ID_habilidad"),habilidad.getString("nombre"), false));
+                        habilidades.add(new Habilidad(habilidad.getString("ID_habilidad"), habilidad.getString("nombre"), false));
                     }
                     ArrayAdapter<Habilidad> dataAdapter = new ArrayAdapter<Habilidad>(context,
                             android.R.layout.simple_list_item_1, habilidades) {
                         @Override
-                        public View getView (int position, View convertView, ViewGroup parent) {
+                        public View getView(int position, View convertView, ViewGroup parent) {
                             LayoutInflater messageInflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
                             Habilidad habilidad = habilidades.get(position);
                             convertView = messageInflater.inflate(R.layout.habilidades_list_item, null);
@@ -100,21 +100,22 @@ public class selec_habilidades extends AppCompatActivity {
             }
         });
     }
+
     // Comienza metodo boton crear usuario para ir a main_log
     public void mis_habilidades(View view) {
         final Intent mis_habilidades = new Intent(this, main_log.class);
         final SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         List<String> idHabilidades = new ArrayList<String>();
 
-        for (Habilidad habilidad:habilidades){
-            if(habilidad.get_seleccionado()) {
+        for (Habilidad habilidad : habilidades) {
+            if (habilidad.get_seleccionado()) {
                 idHabilidades.add(habilidad.get_id());
             }
         }
 
         RequestParams request = new RequestParams();
-        request.add("habilidades", TextUtils.join(",",idHabilidades));
-        String idUsuario = sharedPreferences.getString(USUARIO_ID,"");
+        request.add("habilidades", TextUtils.join(",", idHabilidades));
+        String idUsuario = sharedPreferences.getString(USUARIO_ID, "");
         HttpUtils.put("/usuario/" + idUsuario + "/habilidades", request, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
@@ -159,7 +160,7 @@ public class selec_habilidades extends AppCompatActivity {
             this._seleccionado = _seleccionado;
         }
 
-        Habilidad (String id, String nombre, Boolean seleccionado) {
+        Habilidad(String id, String nombre, Boolean seleccionado) {
             _id = id;
             _nombre = nombre;
             _seleccionado = seleccionado;

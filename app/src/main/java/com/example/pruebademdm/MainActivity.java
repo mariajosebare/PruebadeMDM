@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Comienza metodo boton Inicio
     public void botingresar(View view) {
-        Intent botingresar = new Intent(this,Login.class);
+        Intent botingresar = new Intent(this, Login.class);
         startActivity(botingresar);
     }
     // Finaliza metodo boton inicio

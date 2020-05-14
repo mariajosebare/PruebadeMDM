@@ -50,23 +50,18 @@ public class Activitymod_perfil extends AppCompatActivity {
         // Finaliza codigo icono action bar
     }
 
-// Relizamos el codigo para poder modificar los datos de usuario de ser necesrio
+    // Relizamos el codigo para poder modificar los datos de usuario de ser necesrio
     public void modificarUsuario(View view) {
         final Intent modificarUsuario = new Intent(this, perfil_usuario.class);
         final SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
-        final String correo= ((EditText) findViewById(R.id.editText)).getText().toString();
+        final String correo = ((EditText) findViewById(R.id.editText)).getText().toString();
         RequestParams request = new RequestParams();
         String nombre_usuario = ((EditText) findViewById(R.id.texnombre)).getText().toString();
         //String ci = ((EditText) findViewById(R.id.textci)).getText().toString();
 
 
-
-
         //request.add("ci", ci);
         request.add("nombre", nombre_usuario);
-
-
-
 
 
         String usuarioId = sharedPreferences.getString(USUARIO_ID, "");
@@ -79,12 +74,9 @@ public class Activitymod_perfil extends AppCompatActivity {
                     String nombre = usuarioJSON.getString("nombre");
 
 
-
-
-
                     SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString(CONTRASEÑA_CORREO,password);
-                    editor.putString(USUARIO_NOMBRE,nombre);
+                    editor.putString(CONTRASEÑA_CORREO, password);
+                    editor.putString(USUARIO_NOMBRE, nombre);
                     editor.commit();
                     startActivity(modificarUsuario);
                 } catch (JSONException e) {
@@ -100,25 +92,22 @@ public class Activitymod_perfil extends AppCompatActivity {
     }
 
 
-
-
-
     //ACTION BAR
-    public boolean onCreateOptionsMenu(Menu menu){
+    public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.action_bar, menu);
         return true;
     }
 
-    public boolean onOptionsItemSelected(MenuItem item){
+    public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if(id == R.id.modificar){
+        if (id == R.id.modificar) {
             Toast.makeText(this, "Editar perfil", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this, selec_habilidades.class));
-        } else if(id == R.id.ir_chat){
+        } else if (id == R.id.ir_chat) {
             Toast.makeText(this, "Chat", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this, chat.class));
-        } else if(id == R.id.salir){
+        } else if (id == R.id.salir) {
             Toast.makeText(this, "Cerrar sesión", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this, MainActivity.class));
         }

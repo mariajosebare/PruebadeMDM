@@ -22,7 +22,7 @@ import es.dmoral.toasty.Toasty;
 
 public class Login extends AppCompatActivity {
 
-    public static final String MyPREFERENCES = "Preferencias" ;
+    public static final String MyPREFERENCES = "Preferencias";
     public static final String USUARIO_ID = "usuario_id";
     public static final String USUARIO_NOMBRE = "usuario_nombre";
     public static final String USUARIO_APELLIDO = "usuario_apellido";
@@ -57,24 +57,24 @@ public class Login extends AppCompatActivity {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 try {
-                    JSONObject response=new JSONObject(new String(responseBody));
+                    JSONObject response = new JSONObject(new String(responseBody));
                     if (!response.has("error")) {
                         //Creamos el codigo nesesario para que luego de logueado nos guarde los datos.
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         JSONObject usuario = response.getJSONObject("usuario");
                         String idUsuario = usuario.getString("ID_usuario");
-                        String nombreUsuario= usuario.getString("nombre");
+                        String nombreUsuario = usuario.getString("nombre");
                         String apellidoUsuario = usuario.getString("apellido");
                         String correoUsuario = usuario.getString("email");
                         String password = usuario.getString("password");
                         String telefono = usuario.getString("telefono");
 
-                        editor.putString(USUARIO_ID,idUsuario);
+                        editor.putString(USUARIO_ID, idUsuario);
                         editor.putString(USUARIO_NOMBRE, nombreUsuario);
                         editor.putString(USUARIO_APELLIDO, apellidoUsuario);
-                        editor.putString(CORREO_USUARIO,correoUsuario);
-                        editor.putString(CONTRASEÑA_CORREO,password);
-                        editor.putString(TELEFONO,telefono);
+                        editor.putString(CORREO_USUARIO, correoUsuario);
+                        editor.putString(CONTRASEÑA_CORREO, password);
+                        editor.putString(TELEFONO, telefono);
 
 
                         editor.commit();
@@ -102,9 +102,6 @@ public class Login extends AppCompatActivity {
             }
         });
     }
-
-
-
 
 
 }

@@ -56,10 +56,12 @@ public class chat extends AppCompatActivity {
     String nombreMiUsuario;
     String nombreOtroUsuario;
     Context context;
+    Boolean activo = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         context = this;
+        activo = true;
         final SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
@@ -75,9 +77,9 @@ public class chat extends AppCompatActivity {
         // Finaliza codigo icono action bar
 
         ListView lista = findViewById(R.id.listaMensaje);
-        ArrayAdapter<Mensaje> adapter = new ArrayAdapter<Mensaje>(context, android.R.layout.simple_list_item_1, mensajes){
+        ArrayAdapter<Mensaje> adapter = new ArrayAdapter<Mensaje>(context, android.R.layout.simple_list_item_1, mensajes) {
             @Override
-            public View getView (int position, View convertView, ViewGroup parent) {
+            public View getView(int position, View convertView, ViewGroup parent) {
                 //View v = super.getView(position, convertView, parent);
                 MessageViewHolder holder = new MessageViewHolder();
                 LayoutInflater messageInflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
@@ -108,45 +110,51 @@ public class chat extends AppCompatActivity {
         Runnable runnableCode = new Runnable() {
             @Override
             public void run() {
-                if (! procesando) {
-                    procesando = true;
-                    HttpUtils.get("/chat/" + idMiUsuario + "/" + idOtroUsuario, null, new AsyncHttpResponseHandler() {
-                        @Override
-                        public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                            try {
-                                JSONArray mensajesJSON = new JSONArray(new String(responseBody));
-                                mensajes.clear();
-                                for (int i = 0; i < mensajesJSON.length(); i++) {
-                                    JSONObject mensajeJSON = mensajesJSON.getJSONObject(i);
-                                    String texto = mensajeJSON.getString("mensaje");
-                                    String idUsuario = mensajeJSON.getString("ID_usuario_1");
-                                    Boolean miMensaje = idMiUsuario.equals(idUsuario);
-                                    String nombreUsuario = miMensaje ? nombreMiUsuario : nombreOtroUsuario;
-                                    Mensaje mensaje = new Mensaje(texto, nombreUsuario, miMensaje);
-                                    mensajes.add(mensaje);
+                if (activo) {
+                    if (!procesando) {
+                        procesando = true;
+                        HttpUtils.get("/chat/" + idMiUsuario + "/" + idOtroUsuario, null, new AsyncHttpResponseHandler() {
+                            @Override
+                            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                                try {
+                                    JSONArray mensajesJSON = new JSONArray(new String(responseBody));
+                                    mensajes.clear();
+                                    for (int i = 0; i < mensajesJSON.length(); i++) {
+                                        JSONObject mensajeJSON = mensajesJSON.getJSONObject(i);
+                                        String texto = mensajeJSON.getString("mensaje");
+                                        String idUsuario = mensajeJSON.getString("ID_usuario_1");
+                                        Boolean miMensaje = idMiUsuario.equals(idUsuario);
+                                        String nombreUsuario = miMensaje ? nombreMiUsuario : nombreOtroUsuario;
+                                        Mensaje mensaje = new Mensaje(texto, nombreUsuario, miMensaje);
+                                        mensajes.add(mensaje);
+                                    }
+                                    ListView lista = findViewById(R.id.listaMensaje);
+                                    ((ArrayAdapter<Mensaje>) lista.getAdapter()).notifyDataSetChanged();
+                                    lista.setSelection(lista.getCount() - 1);
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                } finally {
+                                    procesando = false;
                                 }
-                                ListView lista = findViewById(R.id.listaMensaje);
-                                ((ArrayAdapter<Mensaje>) lista.getAdapter()).notifyDataSetChanged();
-                                lista.setSelection(lista.getCount() - 1);
                             }
-                            catch (JSONException e){
-                                e.printStackTrace();
-                            }
-                            finally {
+
+                            @Override
+                            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                                error.printStackTrace();
                                 procesando = false;
                             }
-                        }
-                        @Override
-                        public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                            error.printStackTrace();
-                            procesando = false;
-                        }
-                    });
+                        });
+                    }
+                    handler.postDelayed(this, 3000);
                 }
-                handler.postDelayed(this, 3000);
             }
         };
         handler.postDelayed(runnableCode, 0);
+    }
+    @Override
+    public void onPause() {
+        activo = false;
+        super.onPause();
     }
 
     public void enviarMensaje(View view) {
@@ -158,12 +166,13 @@ public class chat extends AppCompatActivity {
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 ((EditText) findViewById(R.id.textMensaje)).setText("");
             }
+
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
                 error.printStackTrace();
             }
         });
-     }
+    }
 
     class Mensaje {
         private String texto; // cuerpo del mensaje
@@ -186,7 +195,9 @@ public class chat extends AppCompatActivity {
 
         public boolean esUsuarioActual() {
             return usuarioActual;
-        };
+        }
+
+        ;
 
         public String toString() {
             return nombreUsuario + ": \n" + texto;
@@ -199,21 +210,22 @@ public class chat extends AppCompatActivity {
     }
 
     //ACTION BAR
-    public boolean onCreateOptionsMenu(Menu menu){
+    public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.action_bar, menu);
         return true;
     }
 
-    public boolean onOptionsItemSelected(MenuItem item){
+    public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+        activo = false;
 
-        if(id == R.id.modificar){
+        if (id == R.id.modificar) {
             Toast.makeText(this, "Editar perfil", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this, selec_habilidades.class));
-        } else if(id == R.id.ir_chat){
+        } else if (id == R.id.ir_chat) {
             Toast.makeText(this, "Chat", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this, chat.class));
-        } else if(id == R.id.salir){
+        } else if (id == R.id.salir) {
             Toast.makeText(this, "Cerrar sesión", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this, MainActivity.class));
         }

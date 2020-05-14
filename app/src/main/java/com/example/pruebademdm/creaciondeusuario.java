@@ -56,10 +56,10 @@ public class creaciondeusuario extends AppCompatActivity {
         request.add("fecha de nacimiento", fecha_nacimiento);
         request.add("email", email);
         request.add("password", password);
-        request.add("calle","");
-        request.add("numero de puerta","0");
-        request.add("esquina 1","");
-        request.add("esquina 2","");
+        request.add("calle", "");
+        request.add("numero de puerta", "0");
+        request.add("esquina 1", "");
+        request.add("esquina 2", "");
 
         HttpUtils.put("/usuarios", request, new AsyncHttpResponseHandler() {
             @Override
@@ -67,10 +67,10 @@ public class creaciondeusuario extends AppCompatActivity {
                 try {
                     JSONObject usuarioJSON = new JSONObject(new String(responseBody));
                     String idUsuario = usuarioJSON.getString("ID_usuario");
-                    String nombreUsuario= usuarioJSON.getString("nombre");
+                    String nombreUsuario = usuarioJSON.getString("nombre");
                     String apellidoUsuario = usuarioJSON.getString("apellido");
                     SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString(USUARIO_ID,idUsuario);
+                    editor.putString(USUARIO_ID, idUsuario);
                     editor.putString(USUARIO_NOMBRE, nombreUsuario);
                     editor.putString(USUARIO_APELLIDO, apellidoUsuario);
                     editor.commit();
