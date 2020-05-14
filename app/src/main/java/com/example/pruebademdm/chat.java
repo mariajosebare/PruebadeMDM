@@ -64,13 +64,10 @@ public class chat extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
         idOtroUsuario = this.getIntent().getStringExtra(USUARIO_CHAT);
-
+        nombreOtroUsuario = this.getIntent().getStringExtra(USUARIO_CHAT_NOMBRE);
 
         idMiUsuario = sharedPreferences.getString(USUARIO_ID, "");
-        //idOtroUsuario = sharedPreferences.getString(USUARIO_CHAT, "");
-        //nombreMiUsuario = sharedPreferences.getString(USUARIO_NOMBRE, "");
         nombreMiUsuario = "Yo";
-        nombreOtroUsuario = sharedPreferences.getString(USUARIO_CHAT_NOMBRE, "");
 
         //Comienza el codigo para colocar icono en el action bar
         getSupportActionBar().setDisplayShowHomeEnabled(true);

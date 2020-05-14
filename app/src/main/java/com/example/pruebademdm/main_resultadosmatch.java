@@ -107,11 +107,8 @@ public class main_resultadosmatch  extends AppCompatActivity {
     // Comienza metodo boton ir_al_chat
     public void ir_al_chat(Necesidad necesidad) {
         Intent ir_al_chat = new Intent(this, chat.class);
-        final SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(USUARIO_CHAT, necesidad.get_idUsuario());
-        editor.putString(USUARIO_CHAT_NOMBRE, necesidad.get_nombreUsuario());
-        editor.commit();
+        ir_al_chat.putExtra(USUARIO_CHAT, necesidad.get_idUsuario());
+        ir_al_chat.putExtra(USUARIO_CHAT_NOMBRE, necesidad.get_nombreUsuario());
         startActivity(ir_al_chat);
         // Finaliza metodo boton para ir al chat
     }

@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
         // Finaliza codigo icono action bar
 
+        createNotificationChannel();
     }
 
 

@@ -40,6 +40,7 @@ import static com.example.pruebademdm.Login.MyPREFERENCES;
 import static com.example.pruebademdm.Login.NECESIDAD_SELECCIONADA;
 import static com.example.pruebademdm.Login.USUARIO_APELLIDO;
 import static com.example.pruebademdm.Login.USUARIO_CHAT;
+import static com.example.pruebademdm.Login.USUARIO_CHAT_NOMBRE;
 import static com.example.pruebademdm.Login.USUARIO_ID;
 import static com.example.pruebademdm.Login.USUARIO_NOMBRE;
 import static com.example.pruebademdm.MainActivity.CHANNEL_ID;
@@ -94,6 +95,8 @@ public class main_log extends AppCompatActivity {
                 }
             });
 
+            final NotificationManagerCompat notificationManager = NotificationManagerCompat.from(pantalla);
+
             // Crear Handler
             final Handler handler = new Handler();
             Runnable runnableCode = new Runnable() {
@@ -110,10 +113,12 @@ public class main_log extends AppCompatActivity {
                                 for (int i = 0; i < alertasJSON.length(); i++) {
                                     JSONObject alertaJSON = alertasJSON.getJSONObject(i);
                                     String id_usuario_chat = alertaJSON.getString("ID_usuario_1");
+                                    String nombre_usuario = alertaJSON.getString("nombre");
 
                                     Intent intent = new Intent(pantalla, chat.class);
                                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                     intent.putExtra(USUARIO_CHAT, id_usuario_chat);
+                                    intent.putExtra(USUARIO_CHAT_NOMBRE, nombre_usuario);
                                     PendingIntent pendingIntent = PendingIntent.getActivity(pantalla, 0, intent, 0);
 
                                     NotificationCompat.Builder builder = new NotificationCompat.Builder(pantalla, CHANNEL_ID)
@@ -125,8 +130,8 @@ public class main_log extends AppCompatActivity {
                                             .setContentIntent(pendingIntent)
                                             .setAutoCancel(true);
 
-                                    NotificationManagerCompat notificationManager = NotificationManagerCompat.from(pantalla);
 
+                                    notificationManager.cancel(i);
                                     notificationManager.notify(i, builder.build());
                                 }
                             }
