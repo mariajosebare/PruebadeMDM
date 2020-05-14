@@ -9,35 +9,23 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import c.e.p.util.HttpUtils;
 import cz.msebera.android.httpclient.Header;
 
 import static com.example.pruebademdm.Login.MyPREFERENCES;
-import static com.example.pruebademdm.Login.USUARIO_APELLIDO;
 import static com.example.pruebademdm.Login.USUARIO_ID;
-import static com.example.pruebademdm.Login.USUARIO_NOMBRE;
 import static com.example.pruebademdm.Login.CORREO_USUARIO;
 import static com.example.pruebademdm.Login.CONTRASEÑA_CORREO;
-import static com.example.pruebademdm.Login.TELEFONO;
-
-
+import static com.example.pruebademdm.Login.USUARIO_NOMBRE;
 
 
 public class Activitymod_perfil extends AppCompatActivity {
@@ -51,6 +39,9 @@ public class Activitymod_perfil extends AppCompatActivity {
         EditText correControl = findViewById(R.id.editText);
         String correoActual = sharedPreferences.getString(CORREO_USUARIO, "");
         correControl.setText(correoActual);
+        //EditText nombreControl = findViewById(R.id.texnombre);
+        //String nombreActual = sharedPreferences.getString(USUARIO_NOMBRE, "");
+        //correControl.setText(nombreActual);
         //Finaliza metodo llamado de datos para cambios de contrasena
 
         //Comienza el codigo para colocar icono en el action bar
@@ -59,21 +50,20 @@ public class Activitymod_perfil extends AppCompatActivity {
         // Finaliza codigo icono action bar
     }
 
-
+// Relizamos el codigo para poder modificar los datos de usuario de ser necesrio
     public void modificarUsuario(View view) {
         final Intent modificarUsuario = new Intent(this, perfil_usuario.class);
         final SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
-        final String new_password = ((EditText) findViewById(R.id.newPass)).getText().toString();
+        final String correo= ((EditText) findViewById(R.id.editText)).getText().toString();
         RequestParams request = new RequestParams();
+        String nombre_usuario = ((EditText) findViewById(R.id.texnombre)).getText().toString();
         //String ci = ((EditText) findViewById(R.id.textci)).getText().toString();
-        //String nombre = ((EditText) findViewById(R.id.textci)).getText().toString();
-
 
 
 
 
         //request.add("ci", ci);
-        //request.add("nombre", nombre);
+        request.add("nombre", nombre_usuario);
 
 
 
@@ -86,7 +76,7 @@ public class Activitymod_perfil extends AppCompatActivity {
                 try {
                     JSONObject usuarioJSON = new JSONObject(new String(responseBody));
                     String password = usuarioJSON.getString("password");
-
+                    String nombre = usuarioJSON.getString("nombre");
 
 
 
@@ -94,6 +84,7 @@ public class Activitymod_perfil extends AppCompatActivity {
 
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString(CONTRASEÑA_CORREO,password);
+                    editor.putString(USUARIO_NOMBRE,nombre);
                     editor.commit();
                     startActivity(modificarUsuario);
                 } catch (JSONException e) {

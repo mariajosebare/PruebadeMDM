@@ -39,12 +39,12 @@
         app:layout_constraintTop_toBottomOf="@id/imageView6" />
 
     <EditText
-        android:id="@+id/newPass"
+        android:id="@+id/texnombre"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:gravity="left"
-        android:hint="Cambiar contraseña"
+        android:hint="Nombre"
         android:inputType="textPassword"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,17 +53,17 @@
         app:layout_constraintTop_toBottomOf="@id/editText" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/apellido"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:hint="Repetir contraseña"
+        android:hint="Apellido"
         android:inputType="textPassword"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/newPass" />
+        app:layout_constraintTop_toBottomOf="@id/texnombre" />
 
     <Button
         android:id="@+id/modificarUsuario"
