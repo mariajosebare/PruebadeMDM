@@ -1,20 +1,25 @@
 package com.example.pruebademdm;
 
 
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -37,9 +42,12 @@ import static com.example.pruebademdm.Login.USUARIO_APELLIDO;
 import static com.example.pruebademdm.Login.USUARIO_CHAT;
 import static com.example.pruebademdm.Login.USUARIO_ID;
 import static com.example.pruebademdm.Login.USUARIO_NOMBRE;
+import static com.example.pruebademdm.MainActivity.CHANNEL_ID;
 
 
-    public class main_log extends AppCompatActivity {
+public class main_log extends AppCompatActivity {
+
+        Boolean procesando = false;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +93,61 @@ import static com.example.pruebademdm.Login.USUARIO_NOMBRE;
 
                 }
             });
+
+            // Crear Handler
+            final Handler handler = new Handler();
+            Runnable runnableCode = new Runnable() {
+                @Override
+                public void run() {
+                if (! procesando) {
+                    procesando = true;
+                    String id_usuario = sharedPreferences.getString(USUARIO_ID, "");
+                    HttpUtils.get("/chat/" + id_usuario + "/alertas", null, new AsyncHttpResponseHandler() {
+                        @Override
+                        public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                            try {
+                                JSONArray alertasJSON = new JSONArray(new String(responseBody));
+                                for (int i = 0; i < alertasJSON.length(); i++) {
+                                    JSONObject alertaJSON = alertasJSON.getJSONObject(i);
+                                    String id_usuario_chat = alertaJSON.getString("ID_usuario_1");
+
+                                    Intent intent = new Intent(pantalla, chat.class);
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                    intent.putExtra(USUARIO_CHAT, id_usuario_chat);
+                                    PendingIntent pendingIntent = PendingIntent.getActivity(pantalla, 0, intent, 0);
+
+                                    NotificationCompat.Builder builder = new NotificationCompat.Builder(pantalla, CHANNEL_ID)
+                                            .setSmallIcon(R.drawable.medoymanarosa)
+                                            .setContentTitle("Tienes un mensaje!")
+                                            .setContentText("Haz click aquí para chatear ahora")
+                                            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                                            // Set the intent that will fire when the user taps the notification
+                                            .setContentIntent(pendingIntent)
+                                            .setAutoCancel(true);
+
+                                    NotificationManagerCompat notificationManager = NotificationManagerCompat.from(pantalla);
+
+                                    notificationManager.notify(i, builder.build());
+                                }
+                            }
+                            catch (JSONException e){
+                                e.printStackTrace();
+                            }
+                            finally {
+                                procesando = false;
+                            }
+                        }
+                        @Override
+                        public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                            error.printStackTrace();
+                            procesando = false;
+                        }
+                    });
+                }
+                handler.postDelayed(this, 15000);
+                }
+            };
+            handler.postDelayed(runnableCode, 3000);
         }
 
         //ACTION BAR

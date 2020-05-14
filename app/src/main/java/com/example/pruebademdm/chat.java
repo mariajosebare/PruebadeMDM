@@ -63,9 +63,11 @@ public class chat extends AppCompatActivity {
         final SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
+        idOtroUsuario = this.getIntent().getStringExtra(USUARIO_CHAT);
+
 
         idMiUsuario = sharedPreferences.getString(USUARIO_ID, "");
-        idOtroUsuario = sharedPreferences.getString(USUARIO_CHAT, "");
+        //idOtroUsuario = sharedPreferences.getString(USUARIO_CHAT, "");
         //nombreMiUsuario = sharedPreferences.getString(USUARIO_NOMBRE, "");
         nombreMiUsuario = "Yo";
         nombreOtroUsuario = sharedPreferences.getString(USUARIO_CHAT_NOMBRE, "");
