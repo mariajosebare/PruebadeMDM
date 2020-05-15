@@ -184,7 +184,6 @@ public class main_resultadosmatch extends AppCompatActivity {
             return _nombreUsuario + " " + _apellidoUsuario + ": " + _descripcion;
         }
     }
-
     //ACTION BAR
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.action_bar, menu);
@@ -196,17 +195,31 @@ public class main_resultadosmatch extends AppCompatActivity {
 
         if (id == R.id.modificar) {
             Toast.makeText(this, "Editar perfil", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(this, selec_habilidades.class));
+            startActivity(new Intent(this, Activitymod_perfil.class));
+        } else if (id == R.id.home_1) {
+            Toast.makeText(this, "Inicio", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, main_log.class));
         } else if (id == R.id.ir_chat) {
+            Toast.makeText(this, "Chat", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this, chat.class));
         } else if (id == R.id.salir) {
             Toast.makeText(this, "Cerrar sesión", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this, MainActivity.class));
+        } else if (id == R.id.valoracion) {
+            Toast.makeText(this, "Mis valoraciones", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, perfil_usuario.class));
+        } else if (id == R.id.publi) {
+            Toast.makeText(this, "Mis publicaciones", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, Mis_publicaciones.class));
+        } else if (id == R.id.habil) {
+            Toast.makeText(this, "Mis habilidades", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, selec_habilidades.class));
         }
+
         return super.onOptionsItemSelected(item);
     }
-
     //FINALIZA ACTION BAR
+
 }
 
 

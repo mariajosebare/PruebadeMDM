@@ -4,6 +4,13 @@
 
 
     <item
+        android:id="@+id/home_1"
+        android:icon="@drawable/ic_action_home"
+        android:orderInCategory="101"
+        android:title="Inicio"
+        app:showAsAction="always" />
+
+    <item
         android:id="@+id/modificar"
         android:icon="@drawable/ic_action_person2"
         android:orderInCategory="101"
@@ -15,13 +22,6 @@
         android:orderInCategory="101"
         android:title="Chat"
         app:showAsAction="never" />
-
-    <item
-        android:id="@+id/notif"
-        android:icon="@drawable/ic_action_notif"
-        android:orderInCategory="101"
-        android:title="Notificaciones"
-        app:showAsAction="always" />
 
     <item
         android:id="@+id/habil"
@@ -39,10 +39,21 @@
 
 
     <item
-        android:id="@+id/salir"
-        android:icon="@drawable/ic_action_salir"
+    android:id="@+id/salir"
+    android:icon="@drawable/ic_action_salir"
+    android:orderInCategory="101"
+    android:title="Cerrar sesión"
+    app:showAsAction="always" />
+
+    <item
+        android:id="@+id/valoracion"
+        android:icon="@drawable/ic_action_valoraciones"
         android:orderInCategory="101"
-        android:title="Cerrar sesión"
-        app:showAsAction="always" />
+        android:title="Mis valoraciones"
+        app:showAsAction="never" />
+
+
+
+
 
 </menu>

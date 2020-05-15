@@ -7,41 +7,11 @@
     android:orientation="vertical">
 
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/ir_al_chat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp"
-        android:clickable="true"
-        android:onClick="ir_al_chat"
-        app:backgroundTint="#E65252"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/chat" />
-
-    <TextView
-        android:id="@+id/conectausuario"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:gravity="right|center_vertical"
-        android:text="Volver a seleccionar habilidad"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/ir_al_chat"
-        app:layout_constraintTop_toTopOf="@+id/ir_al_chat"
-        app:layout_constraintBottom_toBottomOf="@+id/ir_al_chat"
-        app:layout_constraintStart_toStartOf="parent"/>
-
     <ListView
         android:id="@+id/resultado"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="1dp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/ir_al_chat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
