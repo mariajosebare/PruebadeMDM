@@ -16,11 +16,20 @@
         android:orderInCategory="101"
         android:title="Editar perfil"
         app:showAsAction="always" />
+
+
     <item
         android:id="@+id/ir_chat"
         android:icon="@drawable/ic_action_chat"
         android:orderInCategory="101"
         android:title="Chat"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/contacto"
+        android:icon="@drawable/ic_action_contactanos"
+        android:orderInCategory="101"
+        android:title="Contáctanos"
         app:showAsAction="never" />
 
     <item

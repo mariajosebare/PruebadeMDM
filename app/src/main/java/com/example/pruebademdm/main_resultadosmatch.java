@@ -202,6 +202,9 @@ public class main_resultadosmatch extends AppCompatActivity {
         } else if (id == R.id.ir_chat) {
             Toast.makeText(this, "Chat", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this, chat.class));
+        } else if (id == R.id.contacto) {
+            Toast.makeText(this, "Contáctanos", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, Contacto.class));
         } else if (id == R.id.salir) {
             Toast.makeText(this, "Cerrar sesión", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this, MainActivity.class));
