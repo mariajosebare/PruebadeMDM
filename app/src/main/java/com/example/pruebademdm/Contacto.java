@@ -8,17 +8,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-public class Mis_publicaciones extends AppCompatActivity {
+public class Contacto extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mis_publicaciones);
+        setContentView(R.layout.activity_contacto);
 
         //Comienza el codigo para colocar icono en el action bar
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
         // Finaliza codigo icono action bar
+
     }
 
     //ACTION BAR
