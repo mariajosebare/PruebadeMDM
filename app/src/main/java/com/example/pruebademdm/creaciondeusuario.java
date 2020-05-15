@@ -69,10 +69,12 @@ public class creaciondeusuario extends AppCompatActivity {
                     String idUsuario = usuarioJSON.getString("ID_usuario");
                     String nombreUsuario = usuarioJSON.getString("nombre");
                     String apellidoUsuario = usuarioJSON.getString("apellido");
+
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString(USUARIO_ID, idUsuario);
                     editor.putString(USUARIO_NOMBRE, nombreUsuario);
                     editor.putString(USUARIO_APELLIDO, apellidoUsuario);
+
                     editor.commit();
                     startActivity(validarusuario);
                 } catch (JSONException e) {
