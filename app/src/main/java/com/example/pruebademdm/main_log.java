@@ -173,6 +173,9 @@ public class main_log extends AppCompatActivity {
         if (id == R.id.modificar) {
             Toast.makeText(this, "Editar perfil", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this, Activitymod_perfil.class));
+        } else if (id == R.id.home_1) {
+            Toast.makeText(this, "Inicio", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, main_log.class));
         } else if (id == R.id.ir_chat) {
             Toast.makeText(this, "Chat", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this, chat.class));
@@ -192,8 +195,8 @@ public class main_log extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
     //FINALIZA ACTION BAR
+
 
     // Comienza metodo boton buscar necesidad
     public void busqueda_necesidades(View view) {
