@@ -21,11 +21,18 @@ import org.json.JSONObject;
 import c.e.p.util.HttpUtils;
 import cz.msebera.android.httpclient.Header;
 
+import static com.example.pruebademdm.Login.DOCUMENTO;
 import static com.example.pruebademdm.Login.MyPREFERENCES;
+import static com.example.pruebademdm.Login.TELEFONO;
+import static com.example.pruebademdm.Login.USUARIO_APELLIDO;
 import static com.example.pruebademdm.Login.USUARIO_ID;
 import static com.example.pruebademdm.Login.CORREO_USUARIO;
 import static com.example.pruebademdm.Login.CONTRASEÑA_CORREO;
 import static com.example.pruebademdm.Login.USUARIO_NOMBRE;
+import static com.example.pruebademdm.Login.FECHA_NACIMIENTO;
+import static com.example.pruebademdm.Login.DOCUMENTO;
+
+
 
 
 public class Activitymod_perfil extends AppCompatActivity {
@@ -36,12 +43,33 @@ public class Activitymod_perfil extends AppCompatActivity {
         setContentView(R.layout.activity_activitymod_perfil);
         // Se procede a realizar el el llamado de  datos del usuario para la implementacion del cambio de contrasena
         final SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
-        EditText correControl = findViewById(R.id.editText);
+        //Se realizan las variables editext correo para el respectibo llamado y posterior modificacion
+        EditText correoControl = findViewById(R.id.editText);
         String correoActual = sharedPreferences.getString(CORREO_USUARIO, "");
-        correControl.setText(correoActual);
-        //EditText nombreControl = findViewById(R.id.texnombre);
-        //String nombreActual = sharedPreferences.getString(USUARIO_NOMBRE, "");
-        //correControl.setText(nombreActual);
+        correoControl.setText(correoActual);
+
+        //Se realizan las variables editext nombre para el respectibo llamado y posterior modificacion
+        EditText nombreControl = findViewById(R.id.texnombre);
+        String nombreActual = sharedPreferences.getString(USUARIO_NOMBRE, "");
+        nombreControl.setText(nombreActual);
+
+        //Se realizan las variables editext apellido para el respectibo llamado y posterior modificacion
+        EditText apellidoControl = findViewById(R.id.newapellido);
+        String apellidoActual = sharedPreferences.getString(USUARIO_APELLIDO, "");
+        apellidoControl.setText(apellidoActual);
+
+        //Se realizan las variables editext telefono para el respectibo llamado y posterior modificacion
+        EditText telefonoControl = findViewById(R.id.newtel);
+        String telefonoActual = sharedPreferences.getString(TELEFONO, "");
+        telefonoControl.setText(telefonoActual);
+
+        //EditText fechaNacimientoControl = findViewById(R.id.fecha_de_nacimiento);
+        //String fechaNacimientoActual = sharedPreferences.getString(FECHA_NACIMIENTO, "");
+        //fechaNacimientoControl.setText(fechaNacimientoActual);
+        //EditText documentoControl = findViewById(R.id.documento_ci);
+        //String documentoActual = sharedPreferences.getString(DOCUMENTO, "");
+        //documentoControl.setText(documentoActual);
+
         //Finaliza metodo llamado de datos para cambios de contrasena
 
         //Comienza el codigo para colocar icono en el action bar
@@ -55,13 +83,21 @@ public class Activitymod_perfil extends AppCompatActivity {
         final Intent modificarUsuario = new Intent(this, perfil_usuario.class);
         final SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         final String correo = ((EditText) findViewById(R.id.editText)).getText().toString();
+        final String nombre = ((EditText) findViewById(R.id.texnombre)).getText().toString();
+        final String apellido = ((EditText) findViewById(R.id.newapellido)).getText().toString();
+        final String telefono = ((EditText) findViewById(R.id.newtel)).getText().toString();
         RequestParams request = new RequestParams();
+
+        String correo_usuario = ((EditText) findViewById(R.id.editText)).getText().toString();
         String nombre_usuario = ((EditText) findViewById(R.id.texnombre)).getText().toString();
-        //String ci = ((EditText) findViewById(R.id.textci)).getText().toString();
+        String apellido_usuario = ((EditText) findViewById(R.id.newapellido)).getText().toString();
+        String telefono_usuario = ((EditText) findViewById(R.id.newtel)).getText().toString();
 
 
-        //request.add("ci", ci);
+        request.add("email", correo_usuario);
         request.add("nombre", nombre_usuario);
+        request.add("apellido", apellido_usuario);
+        request.add("telefono", telefono_usuario);
 
 
         String usuarioId = sharedPreferences.getString(USUARIO_ID, "");
@@ -70,13 +106,17 @@ public class Activitymod_perfil extends AppCompatActivity {
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 try {
                     JSONObject usuarioJSON = new JSONObject(new String(responseBody));
-                    String password = usuarioJSON.getString("password");
+                    String correo = usuarioJSON.getString("email");
                     String nombre = usuarioJSON.getString("nombre");
+                    String apellido = usuarioJSON.getString("apellido");
+                    String telefono = usuarioJSON.getString("telefono");
 
 
                     SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString(CONTRASEÑA_CORREO, password);
+                    editor.putString(CORREO_USUARIO, correo);
                     editor.putString(USUARIO_NOMBRE, nombre);
+                    editor.putString(USUARIO_APELLIDO, apellido);
+                    editor.putString(TELEFONO, telefono);
                     editor.commit();
                     startActivity(modificarUsuario);
                 } catch (JSONException e) {

@@ -32,6 +32,9 @@ public class Login extends AppCompatActivity {
     public static final String CORREO_USUARIO = "email";
     public static final String CONTRASEÑA_CORREO = "password";
     public static final String TELEFONO = "telefono";
+    public static final String FECHA_NACIMIENTO = "fecha_nacimiento";
+    public static final String DOCUMENTO = "ci";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

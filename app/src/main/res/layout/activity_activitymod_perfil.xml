@@ -6,6 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".Activitymod_perfil">
 
+    <EditText
+        android:id="@+id/newtel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:hint="Telefono"
+        android:inputType="textPassword|phone"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/texnombre" />
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="0dp"
@@ -13,7 +26,6 @@
         android:layout_marginTop="15dp"
         android:gravity="center"
         android:text="Modificación  de perfil "
-        android:textAllCaps="true"
         android:textColor="#E65252"
         android:textSize="20sp"
         android:textStyle="bold|italic"
@@ -28,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:ems="10"
-        android:enabled="false"
+        android:enabled="true"
         android:gravity="left"
         android:hint="Correo electrónico"
         android:inputType="textEmailAddress"
@@ -45,7 +57,7 @@
         android:layout_marginTop="5dp"
         android:gravity="left"
         android:hint="Nombre"
-        android:inputType="textPassword"
+        android:inputType="text"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
@@ -53,15 +65,15 @@
         app:layout_constraintTop_toBottomOf="@id/editText" />
 
     <EditText
-        android:id="@+id/apellido"
+        android:id="@+id/newapellido"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="16dp"
         android:hint="Apellido"
-        android:inputType="textPassword"
+        android:inputType="text"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/texnombre" />
 
