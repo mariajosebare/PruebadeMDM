@@ -109,7 +109,6 @@ public class Activitymod_perfil extends AppCompatActivity {
                     String correo = usuarioJSON.getString("email");
                     String nombre = usuarioJSON.getString("nombre");
                     String apellido = usuarioJSON.getString("apellido");
-
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString(CORREO_USUARIO, correo);
                     editor.putString(USUARIO_NOMBRE, nombre);
